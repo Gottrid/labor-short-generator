@@ -1,0 +1,52 @@
+{
+  "datum": "2026-11-18",
+  "trend": "Morgen erscheint GTA 6: Alle wollen wissen, was im Spiel wirklich geht. Die ersten Tests auf Deutsch gewinnen die Suche.",
+  "ideen": [
+    {
+      "titel": "Welches Auto ist *wirklich* das schnellste?",
+      "warum": "Zum Release suchen alle nach dem schnellsten Auto, deutsche Messvideos gibt es noch kaum.",
+      "aufbau": "Gleiche gerade Strecke, Vollgas aus dem Stand, jedes Auto einzeln.",
+      "drehplan": ["Eine lange gerade Straße suchen und den Start markieren", "Jedes Auto einzeln aufnehmen, immer gleicher Start", "Tacho oder Ziel deutlich im Bild lassen", "Den schnellsten Lauf am Ende nochmal aufnehmen"],
+      "kategorie": "Härtetest",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
+    },
+    {
+      "titel": "Was passiert am *Rand* der Karte?",
+      "warum": "Neue Karte, neue Grenzen: Kartenrand-Videos laufen bei jedem GTA-Release.",
+      "aufbau": "Mit Auto, Boot und zu Fuß bis an den Kartenrand und schauen, was passiert.",
+      "drehplan": ["Mit dem Boot so weit wie möglich aufs Meer fahren", "Zu Fuß an eine Kartengrenze laufen", "Den Moment aufnehmen, wenn das Spiel dich stoppt"],
+      "kategorie": "Physik am Limit",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 interaktive Karte (GTA Base)", "url": "https://www.gtabase.com/de/gta-6/karte/"}
+    },
+    {
+      "titel": "Polizei loswerden: Welche Methode ist *am schnellsten*?",
+      "warum": "Einsteiger fragen in den ersten Tagen immer, wie man die Polizei abhängt.",
+      "aufbau": "Gleiche Fahndungsstufe, drei Fluchtmethoden, Zeit bis die Polizei aufgibt.",
+      "drehplan": ["Fahndung auslösen, immer gleiche Stufe", "Methode 1: Auto, Methode 2: Boot, Methode 3: verstecken", "Die Uhr oder Spielzeit im Blick behalten"],
+      "kategorie": "Härtetest",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
+    },
+    {
+      "titel": "Wie *gefährlich* sind Alligatoren in GTA 6?",
+      "warum": "Die Alligatoren aus den Trailern sind seit Jahren ein Meme, jetzt kann man sie testen.",
+      "aufbau": "Ins Wasser bei Alligatoren gehen, Zeit bis zum Angriff messen.",
+      "drehplan": ["Einen Sumpf mit Alligatoren suchen", "Ins Wasser gehen und Zeit stoppen", "Einmal mit Boot, einmal schwimmend"],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "hoch",
+      "quelle": {"titel": "GTA 6 interaktive Karte (GTA Base)", "url": "https://www.gtabase.com/de/gta-6/karte/"}
+    },
+    {
+      "titel": "Was passiert, wenn du *nichts* tust?",
+      "warum": "Simpler Neugier-Short, funktioniert zum Release besonders gut als Einstieg.",
+      "aufbau": "Fünf Minuten stillstehen und aufnehmen, wie die Welt reagiert.",
+      "drehplan": ["Mitten in Vice City stehen bleiben", "Fünf Minuten nichts drücken", "Auffällige Reaktionen von Passanten festhalten"],
+      "kategorie": "Systeme erklärt",
+      "potenzial": "hoch",
+      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
+    }
+  ],
+  "sonntag": [0, 2]
+}
