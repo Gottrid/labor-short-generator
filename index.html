@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Labor-Short-Generator</title>
+<meta name="theme-color" content="#0c0a14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Labor">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Ein Labor bei Nacht in Vice City: dunkles Violett, Neon-Pink fuer Aktion, Cyan fuer Messwerte. Links die Arbeitsschritte, rechts die Live-Vorschau. */
+:root {
+  --bg: #0c0a14;
+  --panel: #15121f;
+  --panel-2: #1c1829;
+  --line: #2c2740;
+  --ink: #f3f0fa;
+  --muted: #9d95b3;
+  --pink: #ff2e88;
+  --cyan: #2fe0ff;
+  --good: #3be38f;
+  --bad: #ff4d5e;
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); }
+body {
+  min-height: 100%;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255, 46, 136, 0.13), transparent 60%),
+    radial-gradient(700px 500px at -10% 30%, rgba(47, 224, 255, 0.07), transparent 60%),
+    var(--bg);
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: max(20px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(64px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+details.key { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+details.key summary { cursor: pointer; }
+details.key .field { margin-top: 10px; }
+header.top { display: flex; align-items: center; gap: 14px; padding: 6px 0 20px; }
+.mark {
+  width: 46px; height: 46px; border-radius: 12px; flex: none;
+  background: linear-gradient(135deg, var(--pink), #8a2bff 60%, var(--cyan));
+  display: grid; place-items: center; font-family: var(--display); font-size: 22px; letter-spacing: 0.02em;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 10px 30px rgba(255, 46, 136, 0.25);
+}
+header.top h1 { font-family: var(--display); font-weight: 400; font-size: clamp(26px, 5vw, 38px); line-height: 1; margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+header.top p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.layout { display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr) 420px; align-items: start; }
+  .side { position: sticky; top: 16px; }
+}
+.card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.steps { display: grid; gap: 18px; }
+.step-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.step-no { font-family: var(--mono); font-size: 12px; color: var(--pink); border: 1px solid rgba(255,46,136,0.45); border-radius: 999px; padding: 3px 9px; }
+.step-head h2 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 0; letter-spacing: 0.01em; }
+.step-head .hint { margin-left: auto; color: var(--muted); font-size: 13px; text-align: right; }
+.drop {
+  display: block;
+  border: 1.5px dashed #4a4166; border-radius: 14px; padding: 20px; text-align: center; cursor: pointer;
+  background: rgba(255,255,255,0.02); transition: border-color .15s, background .15s;
+}
+.drop:hover, .drop.over { border-color: var(--pink); background: rgba(255,46,136,0.06); }
+.drop strong { display: block; font-size: 17px; margin-bottom: 4px; }
+.drop span { color: var(--muted); font-size: 14px; }
+.drop input { display: none; }
+.clips { display: grid; gap: 10px; margin-top: 12px; }
+.clip { display: grid; grid-template-columns: 88px 1fr auto; gap: 12px; align-items: center; background: rgba(0,0,0,0.25); border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+.clip img, .clip .ph { width: 88px; height: 50px; object-fit: cover; border-radius: 8px; background: #221d33; display: block; }
+.clip .meta { min-width: 0; }
+.clip .name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.clip .sub { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.clip canvas { width: 100%; height: 22px; display: block; margin-top: 6px; border-radius: 4px; background: #0d0b15; }
+.clip button { background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 16px; }
+.clip button:hover { color: var(--ink); border-color: var(--muted); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.grid2 { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.grid3 { display: grid; gap: 12px; grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 520px) { .grid3 { grid-template-columns: 1fr 1fr; } .grid3 .span-all { grid-column: 1 / -1; } }
+.field { display: grid; gap: 6px; }
+.field + .field, .grid2 + .field, .field + .grid2, .grid3 + .field, .field + .grid3 { margin-top: 12px; }
+.grid2 > .field, .grid3 > .field { margin-top: 0; }
+.tl-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11.5px; color: var(--muted); }
+.tl-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+label { font-size: 13px; color: var(--muted); font-weight: 500; }
+label small { color: #6f678a; font-weight: 400; }
+input[type=text], input[type=number], textarea, select {
+  width: 100%; font: 16px/1.4 var(--body); color: var(--ink); background: #0f0d18; border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px 12px; outline: none; transition: border-color .15s, box-shadow .15s;
+}
+textarea { resize: vertical; min-height: 88px; }
+textarea.mono, input.mono { font-family: var(--mono); font-size: 14.5px; }
+input:focus, textarea:focus, select:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(47,224,255,0.15); }
+input[type=range] { width: 100%; accent-color: var(--pink); }
+input[type=file] { font: 14px var(--body); color: var(--muted); }
+input[type=file]::file-selector-button { font: 600 14px var(--body); color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; margin-right: 10px; cursor: pointer; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn {
+  appearance: none; border: 0; cursor: pointer; font: 600 15px/1 var(--body); color: #fff; border-radius: 12px; padding: 13px 18px;
+  background: var(--pink); box-shadow: 0 8px 24px rgba(255,46,136,0.28); transition: transform .08s, filter .15s, opacity .15s;
+  display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible, .ghost:focus-visible, .clip button:focus-visible, .drop:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.btn.cyan { background: var(--cyan); color: #06121a; box-shadow: 0 8px 24px rgba(47,224,255,0.22); }
+.btn.big { width: 100%; padding: 16px 18px; font-size: 16px; }
+.ghost { appearance: none; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px; font: 600 14px/1 var(--body); cursor: pointer; }
+.ghost:hover { border-color: var(--muted); }
+.ai-box { border: 1px solid rgba(47,224,255,0.35); background: rgba(47,224,255,0.05); border-radius: 14px; padding: 14px; margin-bottom: 14px; }
+.ai-box .ttl { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.ai-box p { margin: 0 0 10px; font-size: 13.5px; color: var(--muted); }
+.chip { font-family: var(--mono); font-size: 11px; color: var(--cyan); border: 1px solid rgba(47,224,255,.4); border-radius: 999px; padding: 2px 8px; }
+.preview { display: grid; gap: 12px; }
+.stage { position: relative; width: 100%; max-width: 360px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: #000; box-shadow: 0 0 0 1px var(--line), 0 30px 60px rgba(0,0,0,0.5), 0 0 80px rgba(255,46,136,0.12); }
+.stage canvas, .stage video { width: 100%; height: 100%; display: block; }
+.stage video { position: absolute; inset: 0; background: #000; }
+.scrub { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.status { font-size: 13.5px; color: var(--muted); min-height: 20px; text-align: center; }
+.status.err { color: var(--bad); }
+.status.ok { color: var(--good); }
+.bar { height: 6px; background: #221d33; border-radius: 99px; overflow: hidden; }
+.bar > div { height: 100%; width: 0; background: linear-gradient(90deg, var(--pink), var(--cyan)); transition: width .2s; }
+.timeline { display: flex; height: 26px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+.timeline div { display: grid; place-items: center; font-family: var(--mono); font-size: 10px; color: #0c0a14; font-weight: 700; overflow: hidden; white-space: nowrap; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stat { background: rgba(0,0,0,0.25); border: 1px solid var(--line); border-radius: 12px; padding: 10px; text-align: center; }
+.stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 24px; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 11.5px; color: var(--muted); }
+.post { display: grid; gap: 12px; }
+.post .field textarea { min-height: 70px; font-size: 14.5px; }
+.copy-row { display: flex; justify-content: space-between; align-items: center; }
+.small { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+.result { display: none; gap: 10px; }
+.result.show { display: grid; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Labor-Short-Generator</h1>
+      <p>Clips rein, Labor-Short raus: 9:16, über 60 Sekunden, bereit für TikTok, Reels und YouTube Shorts.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main class="steps">
+      <!-- 1 Clips -->
+      <section class="card" aria-labelledby="h-clips">
+        <div class="step-head"><span class="step-no">01</span><h2 id="h-clips">Aufnahmen</h2><span class="hint">Die App sucht die actionreichsten Stellen</span></div>
+        <label class="drop" id="drop" tabindex="0" for="fileClips">
+          <strong>Konsolen-Clips auswählen</strong>
+          <span>Mehrere Videos möglich, in der Reihenfolge der Tests. Ideal: 2 Minuten Material oder mehr.</span>
+          <input type="file" id="fileClips" accept="video/*" multiple>
+        </label>
+        <div class="clips" id="clipList"></div>
+        <div class="legend" id="legend" hidden>
+          <span><i style="background:#ff2e88"></i>Action-Wert</span>
+          <span><i style="background:#2fe0ff"></i>Für den Short ausgewählt</span>
+        </div>
+      </section>
+
+      <!-- 2 Texte -->
+      <section class="card" aria-labelledby="h-text">
+        <div class="step-head"><span class="step-no">02</span><h2 id="h-text">Test und Texte</h2><span class="hint"><span class="chip">Beispielwerte</span></span></div>
+        <div class="ai-box" id="aiBox">
+          <div class="ttl">Mit KI ausfüllen</div>
+          <p>Schreib kurz, was du getestet hast und was rauskam. Die KI füllt Frage, Aufbau, Messwerte, Sprechtext und Post-Texte. Sie erfindet keine Messwerte. Ohne Schlüssel kopiert der Knopf eine Anfrage, die du in die Claude-App einfügst.</p>
+          <div class="field"><label for="notes">Deine Notizen</label>
+            <textarea id="notes" placeholder="z. B. Topspeed-Test, 5 Autos, Strecke am Strand. A 198, B 205, C 187, D 212, E 201 km/h. Mythos: teuerstes Auto ist das schnellste, stimmt nicht.">Topspeed-Test, gleiche Strecke, 5 Autos. A 198, B 205, C 187, D 212, E 201 km/h. Mythos: das teuerste Auto (C) ist das schnellste. Stimmt nicht.</textarea></div>
+          <div class="row" style="margin-top:10px"><button class="btn cyan" id="aiBtn" type="button">Texte erzeugen</button><span class="small" id="aiStatus"></span></div>
+          <div id="pasteBox" hidden>
+            <div class="field" style="margin-top:12px"><label for="aiPaste">Antwort aus der Claude-App hier einfügen</label><textarea id="aiPaste" class="mono" placeholder="{ &quot;question&quot;: … }"></textarea></div>
+            <div class="row" style="margin-top:10px"><button class="btn" id="aiApply" type="button">Antwort übernehmen</button></div>
+          </div>
+          <details class="key"><summary>Eigenen KI-Schlüssel nutzen (optional)</summary>
+            <div class="field"><label for="apiKey">Anthropic-API-Schlüssel <small>bleibt nur auf diesem Gerät, kostet pro Anfrage ein paar Cent</small></label><input type="password" id="apiKey" class="mono" autocomplete="off" placeholder="sk-ant-…"></div>
+          </details>
+        </div>
+        <div class="grid3">
+          <div class="field"><label for="testNr">Test-Nr.</label><input type="text" id="testNr" class="mono" value="001"></div>
+          <div class="field"><label for="patch">Patch</label><input type="text" id="patch" class="mono" value="1.00"></div>
+          <div class="field span-all"><label for="handle">Kanal</label><input type="text" id="handle" class="mono" value="@leonidalabor"></div>
+        </div>
+        <div class="field"><label for="question">Frage (Hook) <small>Schlüsselwort in *Sternchen* wird pink markiert</small></label><input type="text" id="question" value="Welches Auto ist *wirklich* das schnellste?"></div>
+        <div class="field"><label for="setup">Versuchsaufbau</label><input type="text" id="setup" value="Gleiche Strecke, gleicher Start, fünf Autos."></div>
+        <div class="field"><label for="beats">Messwerte <small>eine Zeile pro Versuch: Name | Wert</small></label>
+          <textarea id="beats" class="mono">Auto A | 198 km/h
+Auto B | 205 km/h
+Auto C | 187 km/h
+Auto D | 212 km/h
+Auto E | 201 km/h</textarea></div>
+        <div class="grid2">
+          <div class="field"><label for="better">Sieger ist</label><select id="better"><option value="high">höchster Wert</option><option value="low">niedrigster Wert</option></select></div>
+          <div class="field"><label for="verdict">Stempel</label><select id="verdict"><option>WIDERLEGT</option><option>BESTÄTIGT</option><option>ERGEBNIS</option></select></div>
+        </div>
+        <div class="field"><label for="resultLine">Ergebnis in einem Satz</label><input type="text" id="resultLine" value="Auto D gewinnt mit 212 km/h, das teuerste wird Letzter"></div>
+        <div class="field"><label for="cta">Frage am Ende</label><input type="text" id="cta" value="Was soll ich als Nächstes testen?"></div>
+      </section>
+
+      <!-- 3 Ton -->
+      <section class="card" aria-labelledby="h-audio">
+        <div class="step-head"><span class="step-no">03</span><h2 id="h-audio">Ton, Untertitel, Länge</h2></div>
+        <div class="field"><label for="fileVoice">Sprachaufnahme <small>optional, z. B. Sprachmemo vom Handy, Sprechtext unten vorlesen</small></label>
+          <input type="file" id="fileVoice" accept="audio/*,video/*">
+          <div class="small" id="voiceInfo">Ohne Sprachaufnahme läuft der Spielton, und der Sprechtext erscheint als Untertitel.</div>
+        </div>
+        <div class="field"><label for="script">Sprechtext und Untertitel <small>wird automatisch über die Länge verteilt</small></label>
+          <textarea id="script">Welches Auto ist wirklich das schnellste? Fünf Autos, gleiche Strecke, gleicher Start. Ich messe nur die Höchstgeschwindigkeit. Viele sagen: das teuerste gewinnt. Mal sehen. Auto A schafft 198, Auto B legt mit 205 nach. Das teure Auto C? Nur 187. Und dann Auto D. 212 Kilometer pro Stunde. Mythos widerlegt. Was soll ich als Nächstes testen?</textarea></div>
+        <div class="grid2">
+          <div class="field"><label for="gameVol">Spiel-Lautstärke <small id="gameVolOut">80 %</small></label><input type="range" id="gameVol" min="0" max="100" value="80"></div>
+          <div class="field"><label for="targetLen">Länge <small id="targetOut">66 s</small></label><input type="range" id="targetLen" min="61" max="90" value="66"></div>
+        </div>
+        <div class="field"><label for="quality">Qualität</label><select id="quality"><option value="720">720 × 1280, schneller</option><option value="1080">1080 × 1920, beste Qualität</option></select></div>
+        <p class="small">Über 60 Sekunden, damit TikTok den Short vergüten kann. Mit Sprachaufnahme richtet sich die Länge nach deiner Stimme.</p>
+      </section>
+
+      <!-- 5 Post-Texte -->
+      <section class="card" aria-labelledby="h-post">
+        <div class="step-head"><span class="step-no">05</span><h2 id="h-post">Post-Texte</h2><span class="hint">Füllt die KI, sonst selbst schreiben</span></div>
+        <div class="post">
+          <div class="field"><div class="copy-row"><label for="txtTiktok">TikTok</label><button class="ghost" type="button" data-copy="txtTiktok">Kopieren</button></div><textarea id="txtTiktok">Das teuerste Auto ist das schnellste? Ich hab's gemessen. #gta6 #gta6deutsch #gaming #mythos</textarea></div>
+          <div class="field"><div class="copy-row"><label for="txtYoutube">YouTube-Shorts-Titel</label><button class="ghost" type="button" data-copy="txtYoutube">Kopieren</button></div><textarea id="txtYoutube">GTA 6: Welches Auto ist wirklich das schnellste?</textarea></div>
+          <div class="field"><div class="copy-row"><label for="txtInsta">Instagram</label><button class="ghost" type="button" data-copy="txtInsta">Kopieren</button></div><textarea id="txtInsta">Fünf Autos, eine Strecke, ein klares Ergebnis. Was soll ich als Nächstes testen? #gta6 #gta6deutsch #gaming #ps5 #leonidalabor</textarea></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 4 Vorschau -->
+    <aside class="side">
+      <section class="card preview" aria-labelledby="h-prev">
+        <div class="step-head" style="margin-bottom:0"><span class="step-no">04</span><h2 id="h-prev">Vorschau und Export</h2></div>
+        <div class="stage" id="stage">
+          <canvas id="preview" width="540" height="960" aria-label="Vorschau des Shorts"></canvas>
+          <video id="resultVideo" playsinline controls hidden></video>
+        </div>
+        <div class="scrub"><span id="tNow">0,0 s</span><input type="range" id="scrub" min="0" max="66" step="0.1" value="1.4" aria-label="Zeitpunkt in der Vorschau"><span id="tEnd">66 s</span></div>
+        <div class="timeline" id="timeline" aria-label="Aufbau des Shorts"></div>
+        <div class="tl-legend" aria-hidden="true"><span><i style="background:#ff2e88"></i>Hook</span><span><i style="background:#b98cff"></i>Aufbau</span><span><i style="background:#2fe0ff"></i>Messungen</span><span><i style="background:#3be38f"></i>Ergebnis</span><span><i style="background:#ffd166"></i>Frage</span></div>
+        <div class="stats">
+          <div class="stat"><b id="stLen">66 s</b><span>Länge</span></div>
+          <div class="stat"><b id="stCuts">12</b><span>Schnitte</span></div>
+          <div class="stat"><b id="stTik">ja</b><span>TikTok-vergütbar</span></div>
+        </div>
+        <div class="row"><button class="ghost" id="playBtn" type="button" style="flex:1">Vorschau abspielen</button><button class="ghost" id="stopBtn" type="button" hidden>Stopp</button></div>
+        <button class="btn big" id="renderBtn" type="button">Video erstellen</button>
+        <div class="bar" aria-hidden="true"><div id="prog"></div></div>
+        <div class="status" id="status" role="status">Demo-Material aktiv. Lade deine Clips, dann wird es dein Short.</div>
+        <div class="result" id="result">
+          <button class="btn cyan big" id="saveBtn" type="button">Video speichern</button>
+          <div class="row"><button class="ghost" id="coverBtn" type="button" style="flex:1">Titelbild speichern</button><button class="ghost" id="nextBtn" type="button" style="flex:1">Nächster Test</button></div>
+        </div>
+        <p class="small">Beim Erstellen läuft der Short einmal in Echtzeit durch. Bildschirm anlassen und die App im Vordergrund lassen. „Video speichern“ öffnet das Teilen-Menü: dort „Video sichern“ wählen oder direkt an TikTok senden.</p>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script>
+(() => {
+"use strict";
+const $ = (s) => document.querySelector(s);
+const PINK = "#ff2e88", CYAN = "#2fe0ff", GOOD = "#3be38f", BAD = "#ff4d5e";
+const BW = 1080, BH = 1920;
+const WIN = { x: 40, y: 600, w: 1000, h: 562.5 };
+const FIELDS = ["testNr","patch","handle","question","setup","beats","better","verdict","resultLine","cta","script","gameVol","targetLen","quality","notes","txtTiktok","txtYoutube","txtInsta"];
+
+const state = { clips: [], voice: null, busy: false, stop: false, resultBlob: null, resultExt: "mp4", scrubVids: {}, downloads: null, sample: null };
+
+/* ---------- Speicher ---------- */
+function loadSaved() {
+  try {
+    const raw = localStorage.getItem("labor-short-v1");
+    if (!raw) return;
+    const d = JSON.parse(raw);
+    FIELDS.forEach((id) => { if (d[id] !== undefined && $("#" + id)) $("#" + id).value = d[id]; });
+  } catch (e) {}
+}
+function save() {
+  try {
+    const d = {};
+    FIELDS.forEach((id) => { d[id] = $("#" + id).value; });
+    localStorage.setItem("labor-short-v1", JSON.stringify(d));
+  } catch (e) {}
+}
+
+/* ---------- Helfer ---------- */
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const easeOut = (x) => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
+const easeBack = (x) => { x = clamp(x, 0, 1); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const fmtS = (s) => (Math.round(s * 10) / 10).toFixed(1).replace(".", ",") + " s";
+function setStatus(msg, cls) { const el = $("#status"); el.textContent = msg; el.className = "status" + (cls ? " " + cls : ""); }
+function setProg(p) { $("#prog").style.width = Math.round(clamp(p, 0, 1) * 100) + "%"; }
+
+function getForm() {
+  return {
+    testNr: $("#testNr").value.trim() || "001",
+    patch: $("#patch").value.trim(),
+    handle: $("#handle").value.trim(),
+    question: $("#question").value.trim() || "Was passiert hier?",
+    setup: $("#setup").value.trim(),
+    beats: parseBeats($("#beats").value),
+    better: $("#better").value,
+    verdict: $("#verdict").value,
+    resultLine: $("#resultLine").value.trim(),
+    cta: $("#cta").value.trim() || "Was soll ich als Nächstes testen?",
+    script: $("#script").value.trim(),
+    gameVol: Number($("#gameVol").value) / 100,
+    target: Number($("#targetLen").value),
+    quality: $("#quality").value,
+  };
+}
+
+function parseBeats(txt) {
+  return txt.split("\n").map((l) => l.trim()).filter(Boolean).map((l) => {
+    const p = l.split("|");
+    const label = (p[0] || "").trim();
+    const value = (p.length > 1 ? p.slice(1).join("|") : "").trim();
+    const m = value.match(/-?\d+(?:[.,]\d+)?/);
+    const b = { label, value, num: null, dec: 0, pre: "", post: "", sep: "," };
+    if (m) {
+      b.num = parseFloat(m[0].replace(",", "."));
+      b.dec = (m[0].split(/[.,]/)[1] || "").length;
+      b.sep = m[0].includes(".") ? "." : ",";
+      b.pre = value.slice(0, m.index);
+      b.post = value.slice(m.index + m[0].length);
+    }
+    return b;
+  });
+}
+function fmtNum(b, k) {
+  if (b.num === null) return b.value;
+  const v = (b.num * k).toFixed(b.dec);
+  return b.pre + (b.sep === "," ? v.replace(".", ",") : v) + b.post;
+}
+
+function makeChunks(script, a, b) {
+  const words = script.replace(/\s+/g, " ").trim().split(" ").filter(Boolean);
+  if (!words.length || b <= a) return [];
+  const groups = []; let cur = [];
+  for (const w of words) {
+    cur.push(w);
+    const len = cur.join(" ").length;
+    if (cur.length >= 3 || len >= 16 || /[.!?,:;]$/.test(w)) { groups.push(cur.join(" ")); cur = []; }
+  }
+  if (cur.length) groups.push(cur.join(" "));
+  const weights = groups.map((g) => g.length + 5);
+  const tot = weights.reduce((x, y) => x + y, 0);
+  let t = a;
+  return groups.map((g, i) => { const d = (b - a) * weights[i] / tot; const c = { text: g.toUpperCase(), t0: t, t1: t + d }; t += d; return c; });
+}
+
+/* ---------- Videos laden und analysieren ---------- */
+function mkVideo(url, muted) {
+  const v = document.createElement("video");
+  v.playsInline = true; v.setAttribute("playsinline", ""); v.preload = "auto"; v.muted = !!muted;
+  v.src = url;
+  return v;
+}
+function waitMeta(v) {
+  return new Promise((res, rej) => {
+    if (v.readyState >= 1) return res();
+    const to = setTimeout(() => rej(new Error("timeout")), 15000);
+    v.addEventListener("loadedmetadata", () => { clearTimeout(to); res(); }, { once: true });
+    v.addEventListener("error", () => { clearTimeout(to); rej(new Error("Video nicht lesbar")); }, { once: true });
+  });
+}
+function seek(v, t) {
+  return new Promise((res) => {
+    const target = clamp(t, 0, Math.max(0, (v.duration || t + 1) - 0.05));
+    if (Math.abs(v.currentTime - target) < 0.02 && v.readyState >= 2) return res();
+    let done = false;
+    const fin = () => { if (done) return; done = true; v.removeEventListener("seeked", fin); clearTimeout(to); res(); };
+    const to = setTimeout(fin, 4000);
+    v.addEventListener("seeked", fin);
+    v.currentTime = target;
+  });
+}
+
+async function addClips(files) {
+  const list = Array.from(files).filter((f) => f.type.startsWith("video/") || /\.(mp4|mov|webm|m4v)$/i.test(f.name));
+  if (!list.length) { setStatus("Keine Videodatei erkannt. Bitte MP4, MOV oder WebM wählen.", "err"); return; }
+  for (const file of list) {
+    const clip = { id: Math.random().toString(36).slice(2), file, name: file.name, url: URL.createObjectURL(file), dur: 0, scores: null, st: 0.5, thumb: null, bestBlob: null, status: "Wird analysiert …" };
+    state.clips.push(clip);
+    renderClips();
+  }
+  for (const clip of state.clips.filter((c) => !c.scores && !c.failed)) {
+    try { await analyzeClip(clip); } catch (e) { clip.failed = true; clip.status = "Konnte nicht gelesen werden: " + (e.message || e); }
+    renderClips();
+  }
+  setStatus(state.clips.some((c) => c.scores) ? "Analyse fertig. Die Vorschau zeigt jetzt deinen Short." : "Keine lesbaren Clips.", state.clips.some((c) => c.scores) ? "ok" : "err");
+  refresh();
+}
+
+async function analyzeClip(clip) {
+  const v = mkVideo(clip.url, true);
+  await waitMeta(v);
+  try { await v.play(); v.pause(); } catch (e) {}
+  clip.dur = v.duration;
+  if (!isFinite(clip.dur) || clip.dur <= 0) throw new Error("unbekannte Länge");
+  clip.vw = v.videoWidth || 1920; clip.vh = v.videoHeight || 1080;
+  const n = Math.min(160, Math.max(12, Math.round(clip.dur / 0.5)));
+  const st = clip.dur / n; clip.st = st;
+  const c = document.createElement("canvas"); c.width = 32; c.height = 18;
+  const g = c.getContext("2d", { willReadFrequently: true });
+  let prev = null; const motion = new Float32Array(n);
+  for (let i = 0; i < n; i++) {
+    await seek(v, i * st + st / 2);
+    g.drawImage(v, 0, 0, 32, 18);
+    const d = g.getImageData(0, 0, 32, 18).data;
+    const lum = new Float32Array(32 * 18);
+    for (let p = 0, q = 0; p < d.length; p += 4, q++) lum[q] = 0.3 * d[p] + 0.59 * d[p + 1] + 0.11 * d[p + 2];
+    if (prev) { let s = 0; for (let q = 0; q < lum.length; q++) s += Math.abs(lum[q] - prev[q]); motion[i] = s / lum.length; }
+    prev = lum;
+    clip.status = "Analysiere Bewegung … " + Math.round((i + 1) / n * 100) + " %";
+    if (i % 8 === 0) renderClipStatus(clip);
+  }
+  motion[0] = motion[1] || 0;
+  let audio = null;
+  if (clip.file.size < 150 * 1024 * 1024) {
+    try {
+      clip.status = "Analysiere Ton …"; renderClipStatus(clip);
+      const AC = window.AudioContext || window.webkitAudioContext;
+      const ac = new AC();
+      const buf = await new Promise((res, rej) => { clip.file.arrayBuffer().then((ab) => ac.decodeAudioData(ab, res, rej)).catch(rej); });
+      clip.audioBuf = buf;
+      const ch = buf.getChannelData(0); const sr = buf.sampleRate;
+      audio = new Float32Array(n);
+      for (let i = 0; i < n; i++) {
+        const a = Math.floor(i * st * sr), b = Math.min(ch.length, Math.floor((i + 1) * st * sr));
+        let s = 0, k = 0; for (let j = a; j < b; j += 64) { s += ch[j] * ch[j]; k++; }
+        audio[i] = k ? Math.sqrt(s / k) : 0;
+      }
+      ac.close && ac.close();
+    } catch (e) { audio = null; }
+  }
+  const norm = (arr) => { const s = Array.from(arr).sort((a, b) => a - b); const p = s[Math.floor(s.length * 0.95)] || 1; return arr.map((x) => clamp(x / (p || 1), 0, 1)); };
+  const m = norm(motion), a = audio ? norm(audio) : null;
+  clip.scores = m.map((x, i) => a ? 0.65 * x + 0.35 * a[i] : x);
+  // Vorschaubild und bester Moment
+  let bi = 0; clip.scores.forEach((x, i) => { if (x > clip.scores[bi]) bi = i; });
+  await seek(v, bi * st + st / 2);
+  const tc = document.createElement("canvas"); tc.width = 320; tc.height = Math.round(320 * clip.vh / clip.vw);
+  tc.getContext("2d").drawImage(v, 0, 0, tc.width, tc.height);
+  clip.thumb = tc.toDataURL("image/jpeg", 0.75);
+  clip.bestBlob = await new Promise((r) => tc.toBlob(r, "image/jpeg", 0.8));
+  clip.status = "Bereit · " + fmtS(clip.dur);
+  v.removeAttribute("src"); v.load();
+}
+
+function renderClips() {
+  const box = $("#clipList"); box.innerHTML = "";
+  state.clips.forEach((c, idx) => {
+    const el = document.createElement("div"); el.className = "clip"; el.id = "clip-" + c.id;
+    el.innerHTML = (c.thumb ? '<img alt="">' : '<div class="ph"></div>') +
+      '<div class="meta"><div class="name"></div><div class="sub"></div><canvas width="600" height="44" aria-hidden="true"></canvas></div>' +
+      '<button type="button" aria-label="Clip entfernen">×</button>';
+    if (c.thumb) el.querySelector("img").src = c.thumb;
+    el.querySelector(".name").textContent = (idx + 1) + ". " + c.name;
+    el.querySelector(".sub").textContent = c.status;
+    el.querySelector("button").addEventListener("click", () => { if (state.busy) return; URL.revokeObjectURL(c.url); state.clips = state.clips.filter((x) => x !== c); delete state.scrubVids[c.id]; renderClips(); refresh(); });
+    box.appendChild(el);
+  });
+  $("#legend").hidden = !state.clips.length;
+  drawStrips(state.lastPlan);
+}
+function renderClipStatus(c) { const el = document.querySelector("#clip-" + c.id + " .sub"); if (el) el.textContent = c.status; }
+
+function drawStrips(plan) {
+  state.clips.forEach((c, ci) => {
+    const cv = document.querySelector("#clip-" + c.id + " canvas"); if (!cv) return;
+    const g = cv.getContext("2d"); g.clearRect(0, 0, cv.width, cv.height);
+    if (!c.scores) return;
+    const n = c.scores.length, w = cv.width / n;
+    c.scores.forEach((s, i) => { g.fillStyle = "rgba(255,46,136," + (0.15 + 0.85 * s).toFixed(3) + ")"; const h = 6 + s * 30; g.fillRect(i * w, cv.height - h, Math.max(1, w - 1), h); });
+    if (plan) plan.segs.forEach((s) => {
+      if (s.clip !== ci) return;
+      const x0 = s.s / c.dur * cv.width, x1 = Math.min(cv.width, (s.s + s.d) / c.dur * cv.width);
+      g.fillStyle = "rgba(47,224,255,0.95)"; g.fillRect(x0, 0, Math.max(2, x1 - x0), 5);
+    });
+  });
+}
+
+/* ---------- Schnittplan ---------- */
+function buildPlan(F) {
+  const clips = state.clips.filter((c) => c.scores);
+  const idxOf = (c) => state.clips.indexOf(c);
+  let T = F.target;
+  if (state.voice && state.voice.dur) T = clamp(Math.ceil(state.voice.dur + 2.5), 61, 90);
+  const hookD = 3, setupD = 5, resD = 10, ctaD = 4;
+  const beatTotal = T - hookD - setupD - resD - ctaD;
+  const pattern = [4.5, 4, 5, 3.5, 4.5, 5, 4];
+  const lens = []; let acc = 0, i = 0;
+  while (beatTotal - acc > 5.5) { const l = pattern[i % pattern.length]; lens.push(l); acc += l; i++; }
+  lens.push(beatTotal - acc);
+  const occ = {};
+  const overlaps = (ci, a, b) => (occ[ci] || []).some(([x, y]) => a < y - 0.2 && b > x + 0.2);
+  const occupy = (ci, a, b) => { (occ[ci] = occ[ci] || []).push([a, b]); };
+  const wscore = (c, s, d) => { const i0 = Math.floor(s / c.st), i1 = Math.max(i0 + 1, Math.ceil((s + d) / c.st)); let t = 0, k = 0; for (let j = i0; j < Math.min(i1, c.scores.length); j++) { t += c.scores[j]; k++; } return k ? t / k : 0; };
+  const pick = (len, allow) => {
+    let best = null;
+    clips.forEach((c) => {
+      const ci = idxOf(c), L = Math.min(len, c.dur);
+      for (let s = 0; s <= c.dur - L + 1e-6; s += Math.max(0.25, c.st / 2)) {
+        if (!allow && overlaps(ci, s, s + L)) continue;
+        const sc = wscore(c, s, L);
+        if (!best || sc > best.sc) best = { clip: ci, s, d: L, sc };
+      }
+    });
+    if (!best && !allow) return pick(len, true);
+    return best;
+  };
+  const segs = []; let stampOffset = 4;
+  if (clips.length) {
+    const h = pick(hookD, true);
+    const hc = state.clips[h.clip];
+    const rs = clamp(h.s - 5, 0, Math.max(0, hc.dur - resD));
+    stampOffset = clamp(h.s - rs + 1.2, 1.5, 8);
+    const c0 = state.clips.indexOf(clips[0]);
+    segs.push({ kind: "hook", clip: h.clip, s: h.s, d: hookD });
+    segs.push({ kind: "setup", clip: c0, s: 0, d: setupD });
+    occupy(h.clip, rs, rs + resD); occupy(c0, 0, setupD);
+    const beats = lens.map((L) => { const b = pick(L, false); occupy(b.clip, b.s, b.s + L); return { kind: "beat", clip: b.clip, s: b.s, d: L }; });
+    beats.sort((a, b) => a.clip - b.clip || a.s - b.s);
+    segs.push(...beats);
+    segs.push({ kind: "result", clip: h.clip, s: rs, d: resD });
+    segs.push({ kind: "cta", clip: h.clip, s: Math.max(0, h.s - ctaD), d: ctaD });
+  } else {
+    segs.push({ kind: "hook", clip: -1, s: 40, d: hookD });
+    segs.push({ kind: "setup", clip: -1, s: 0, d: setupD });
+    lens.forEach((L, j) => segs.push({ kind: "beat", clip: -1, s: 6 + j * 6, d: L }));
+    segs.push({ kind: "result", clip: -1, s: 36, d: resD });
+    segs.push({ kind: "cta", clip: -1, s: 36, d: ctaD });
+  }
+  let t = 0; segs.forEach((s) => { s.t0 = t; t += s.d; });
+  const by = (k) => segs.find((s) => s.kind === k);
+  const beatSegs = segs.filter((s) => s.kind === "beat");
+  const P = {
+    T: t, segs, beatSegs,
+    hookEnd: by("setup").t0, setupStart: by("setup").t0, beatsStart: beatSegs[0].t0,
+    resultStart: by("result").t0, ctaStart: by("cta").t0,
+  };
+  P.stampT = P.resultStart + Math.min(stampOffset, resD - 2.5);
+  const k = F.beats.length, nb = beatSegs.length;
+  P.meas = F.beats.map((b, j) => Object.assign({}, b, { start: beatSegs[Math.min(nb - 1, Math.floor(j * nb / Math.max(1, k)))].t0 + 0.3 }));
+  const nums = P.meas.filter((m) => m.num !== null).map((m) => m.num);
+  P.maxNum = nums.length ? Math.max(...nums.map(Math.abs)) : 1;
+  const va = state.voice ? 0.3 : 0.4, vb = state.voice && state.voice.dur ? 0.3 + state.voice.dur : P.T - 0.6;
+  P.chunks = makeChunks(F.script, va, Math.min(vb, P.T - 0.3));
+  P.q = parseQuestion(F.question);
+  return P;
+}
+function segIndexAt(P, t) { for (let i = P.segs.length - 1; i >= 0; i--) if (t >= P.segs[i].t0) return i; return 0; }
+function parseQuestion(q) {
+  return q.split(/\s+/).filter(Boolean).map((w) => ({ text: w.replace(/\*/g, "").toUpperCase(), hl: w.includes("*") }));
+}
+
+/* ---------- Synthetisches Demo-Bild ---------- */
+const synthC = document.createElement("canvas"); synthC.width = 640; synthC.height = 360;
+function synth(tt) {
+  const g = synthC.getContext("2d"), W = 640, H = 360, hz = 196;
+  const sky = g.createLinearGradient(0, 0, 0, hz);
+  sky.addColorStop(0, "#1b0b3a"); sky.addColorStop(0.55, "#7a1f6b"); sky.addColorStop(1, "#ff7a59");
+  g.fillStyle = sky; g.fillRect(0, 0, W, hz);
+  g.fillStyle = "#ffcf6b"; g.beginPath(); g.arc(320, hz - 6, 64, Math.PI, 0); g.fill();
+  g.fillStyle = "#7a1f6b"; for (let i = 0; i < 5; i++) g.fillRect(250, hz - 52 + i * 11, 140, 3 + i);
+  g.fillStyle = "#140b24"; g.fillRect(0, hz, W, H - hz);
+  for (let i = 0; i < 9; i++) { const x = 20 + i * 76 + Math.sin(i) * 10, h = 40 + (i * 37) % 60; g.fillRect(x, hz - h, 34, h); }
+  g.fillStyle = "#231a3a"; g.beginPath(); g.moveTo(300, hz); g.lineTo(340, hz); g.lineTo(620, H); g.lineTo(20, H); g.closePath(); g.fill();
+  g.fillStyle = "#ffe08a";
+  for (let i = 0; i < 8; i++) { const z = ((i / 8) + tt * 0.9) % 1, y = hz + Math.pow(z, 2.2) * (H - hz), w = 2 + z * 10, h = 2 + z * 26; g.fillRect(320 - w / 2, y, w, h); }
+  const sway = Math.sin(tt * 2.1) * 26;
+  g.fillStyle = "#ff2e88"; g.beginPath(); g.moveTo(262 + sway, 336); g.lineTo(378 + sway, 336); g.lineTo(366 + sway, 300); g.lineTo(276 + sway, 300); g.closePath(); g.fill();
+  g.fillStyle = "#2fe0ff"; g.fillRect(286 + sway, 306, 70, 12);
+  g.fillStyle = "rgba(255,255,255,0.65)"; g.font = "700 14px JetBrains Mono, monospace"; g.fillText("DEMO-MATERIAL", 14, 24);
+  return synthC;
+}
+
+/* ---------- Zeichnen ---------- */
+const tiny = document.createElement("canvas"); tiny.width = 27; tiny.height = 48;
+const frameC = document.createElement("canvas"); frameC.width = 640; frameC.height = 360;
+function frameFrom(v) {
+  if (v.videoWidth && (frameC.height !== Math.round(640 * v.videoHeight / v.videoWidth))) frameC.height = Math.max(2, Math.round(640 * v.videoHeight / v.videoWidth));
+  if (v.readyState >= 2) frameC.getContext("2d").drawImage(v, 0, 0, frameC.width, frameC.height);
+  return frameC;
+}
+function rr(c, x, y, w, h, r) { r = Math.min(r, w / 2, h / 2); c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+function drawCover(c, src, x, y, w, h, zoom) {
+  const sw = src.width, sh = src.height; if (!sw || !sh) return;
+  const ra = w / h; let cw, ch;
+  if (sw / sh > ra) { ch = sh / zoom; cw = ch * ra; } else { cw = sw / zoom; ch = cw / ra; }
+  c.drawImage(src, (sw - cw) / 2, (sh - ch) / 2, cw, ch, x, y, w, h);
+}
+function wrap(c, words, maxW) {
+  const lines = []; let line = [], lw = 0; const sp = c.measureText(" ").width;
+  words.forEach((w) => { const ww = c.measureText(w.text).width; if (line.length && lw + sp + ww > maxW) { lines.push({ words: line, w: lw }); line = []; lw = 0; } line.push(Object.assign({}, w, { w: ww })); lw += (line.length > 1 ? sp : 0) + ww; });
+  if (line.length) lines.push({ words: line, w: lw });
+  return lines;
+}
+function textWords(s) { return s.split(/\s+/).filter(Boolean).map((t) => ({ text: t })); }
+function strokeFill(c, txt, x, y, sw, fill) { c.lineJoin = "round"; c.miterLimit = 2; c.lineWidth = sw; c.strokeStyle = "rgba(0,0,0,0.85)"; c.strokeText(txt, x, y); c.fillStyle = fill; c.fillText(txt, x, y); }
+function pill(c, x, y, txt, fill, stroke, color, alignRight) {
+  c.font = "700 32px JetBrains Mono, monospace";
+  const w = c.measureText(txt).width + 44, h = 60, x0 = alignRight ? x - w : x;
+  rr(c, x0, y, w, h, 30);
+  if (fill) { c.fillStyle = fill; c.fill(); }
+  if (stroke) { c.lineWidth = 3; c.strokeStyle = stroke; c.stroke(); }
+  c.fillStyle = color; c.textBaseline = "middle"; c.fillText(txt, x0 + 22, y + h / 2 + 2); c.textBaseline = "alphabetic";
+}
+function card(c, y, h, appear) {
+  const a = easeOut(appear), dy = (1 - a) * 50;
+  c.globalAlpha = a;
+  rr(c, 40, y + dy, 1000, h, 30);
+  c.fillStyle = "rgba(13,10,26,0.86)"; c.fill();
+  c.lineWidth = 2; c.strokeStyle = "rgba(47,224,255,0.45)"; c.stroke();
+  return dy;
+}
+function bars(c, P, F, t, x, y, w, rows, highlight) {
+  const seen = P.meas.filter((m) => m.num !== null && m.start <= t);
+  if (seen.length < 2) return false;
+  const sorted = seen.slice().sort((a, b) => F.better === "low" ? a.num - b.num : b.num - a.num).slice(0, rows);
+  sorted.forEach((m, i) => {
+    const yy = y + i * 58, isCur = m === highlight, lead = i === 0;
+    c.font = "700 26px JetBrains Mono, monospace"; c.fillStyle = isCur ? "#fff" : "rgba(255,255,255,0.75)";
+    let lab = m.label; while (c.measureText(lab).width > w * 0.42 && lab.length > 2) lab = lab.slice(0, -1);
+    if (lab !== m.label) lab = lab.slice(0, -1) + "…";
+    c.fillText((lead ? "1 " : (i + 1) + " ") + lab, x, yy + 26);
+    const bx = x + w * 0.46, bw = w * 0.36, prog = clamp((t - m.start) / 0.5, 0, 1);
+    const frac = clamp(Math.abs(m.num) / (P.maxNum || 1), 0.04, 1) * easeOut(prog);
+    rr(c, bx, yy + 6, bw, 24, 12); c.fillStyle = "rgba(255,255,255,0.08)"; c.fill();
+    rr(c, bx, yy + 6, Math.max(24, bw * frac), 24, 12); c.fillStyle = isCur ? PINK : (lead ? CYAN : "rgba(47,224,255,0.5)"); c.fill();
+    c.fillStyle = "#fff"; c.textAlign = "right"; c.font = "700 24px JetBrains Mono, monospace";
+    c.fillText(fmtNum(m, 1).replace(/\s*km\/h/i, ""), x + w, yy + 26); c.textAlign = "left";
+  });
+  return true;
+}
+
+function drawFrame(c, S, t, P, src, F) {
+  c.setTransform(S, 0, 0, S, 0, 0);
+  c.textAlign = "left"; c.textBaseline = "alphabetic"; c.globalAlpha = 1;
+  const i = segIndexAt(P, t), seg = P.segs[i], lt = t - seg.t0;
+  let sx = 0, sy = 0; const ds = t - P.stampT;
+  if (ds >= 0 && ds < 0.45) { const k = 1 - ds / 0.45; sx = Math.sin(t * 95) * 18 * k; sy = Math.cos(t * 83) * 14 * k; }
+  c.save(); c.translate(sx, sy);
+
+  // Hintergrund: unscharfes Spielbild plus Laborraster
+  c.fillStyle = "#07060c"; c.fillRect(-60, -60, BW + 120, BH + 120);
+  const tg = tiny.getContext("2d"); drawCover(tg, src, 0, 0, 27, 48, 1.2);
+  c.imageSmoothingEnabled = true; c.imageSmoothingQuality = "high";
+  c.drawImage(tiny, -60, -60, BW + 120, BH + 120);
+  c.fillStyle = "rgba(10,6,22,0.64)"; c.fillRect(-60, -60, BW + 120, BH + 120);
+  c.strokeStyle = "rgba(255,255,255,0.045)"; c.lineWidth = 2; c.beginPath();
+  for (let x = 0; x <= BW; x += 60) { c.moveTo(x, 0); c.lineTo(x, BH); }
+  for (let y = 0; y <= BH; y += 60) { c.moveTo(0, y); c.lineTo(BW, y); }
+  c.stroke();
+
+  // Fenster: Hook im Vollbild, dann Sprung ins Laborfenster
+  const k = t < P.hookEnd ? 0 : easeOut((t - P.hookEnd) / 0.38);
+  const r = { x: WIN.x * k, y: WIN.y * k, w: BW + (WIN.w - BW) * k, h: BH + (WIN.h - BH) * k };
+  let zoom = 1 + 0.07 * (lt / seg.d);
+  if (seg.t0 > 0) zoom *= 1 + 0.1 * Math.max(0, 1 - lt / 0.22);
+  if (t < P.hookEnd) zoom = 1.18 - 0.1 * (t / P.hookEnd);
+  c.save(); rr(c, r.x, r.y, r.w, r.h, 30 * k); c.clip(); drawCover(c, src, r.x, r.y, r.w, r.h, zoom); c.restore();
+  if (k < 1) { const gr = c.createLinearGradient(0, 0, 0, 820); gr.addColorStop(0, "rgba(0,0,0," + (0.75 * (1 - k)).toFixed(3) + ")"); gr.addColorStop(1, "rgba(0,0,0,0)"); c.fillStyle = gr; c.fillRect(0, 0, BW, 820); }
+  if (k > 0) {
+    c.globalAlpha = k;
+    rr(c, r.x, r.y, r.w, r.h, 30); c.lineWidth = 16; c.strokeStyle = "rgba(255,46,136,0.22)"; c.stroke();
+    c.lineWidth = 4; c.strokeStyle = PINK; c.stroke();
+    c.strokeStyle = "rgba(255,255,255,0.85)"; c.lineWidth = 5; const L = 46, m = 22;
+    [[r.x + m, r.y + m, 1, 1], [r.x + r.w - m, r.y + m, -1, 1], [r.x + m, r.y + r.h - m, 1, -1], [r.x + r.w - m, r.y + r.h - m, -1, -1]].forEach(([x, y, dx, dy]) => { c.beginPath(); c.moveTo(x, y + dy * L); c.lineTo(x, y); c.lineTo(x + dx * L, y); c.stroke(); });
+    c.font = "700 26px JetBrains Mono, monospace";
+    if (Math.floor(t * 2) % 2 === 0) { c.fillStyle = BAD; c.beginPath(); c.arc(r.x + 92, r.y + 62, 10, 0, Math.PI * 2); c.fill(); }
+    const mm = Math.floor(t / 60), ss = (t % 60).toFixed(1).padStart(4, "0");
+    strokeFill(c, "REC  0" + mm + ":" + ss.replace(".", ","), r.x + 110, r.y + 71, 6, "#fff");
+    if (F.handle) { c.textAlign = "right"; strokeFill(c, F.handle, r.x + r.w - 70, r.y + r.h - 50, 6, "rgba(255,255,255,0.85)"); c.textAlign = "left"; }
+    c.globalAlpha = 1;
+  }
+
+  // Fortschritt und Abzeichen
+  const pg = c.createLinearGradient(0, 0, BW, 0); pg.addColorStop(0, PINK); pg.addColorStop(1, CYAN);
+  c.fillStyle = "rgba(255,255,255,0.12)"; c.fillRect(0, 0, BW, 12); c.fillStyle = pg; c.fillRect(0, 0, BW * clamp(t / P.T, 0, 1), 12);
+  pill(c, 40, 150, "TEST #" + F.testNr, PINK, null, "#fff", false);
+  if (F.patch) pill(c, 1040, 150, "PATCH " + F.patch, "rgba(0,0,0,0.45)", CYAN, CYAN, true);
+
+  // Frage: gross im Hook, danach als Kopfzeile
+  if (t < 8) {
+    let size = 104; c.font = size + "px Anton, Impact, sans-serif";
+    let lines = wrap(c, P.q, 960);
+    if (lines.length > 3) { size = 84; c.font = size + "px Anton, Impact, sans-serif"; lines = wrap(c, P.q, 960); }
+    const fade = t > 7.6 ? 1 - (t - 7.6) / 0.4 : 1;
+    let wi = 0; const lh = size * 1.08, y0 = 250 + size;
+    lines.slice(0, 4).forEach((ln, li) => {
+      let x = 60; const y = y0 + li * lh;
+      ln.words.forEach((w) => {
+        const ap = clamp((t - wi * 0.07) / 0.22, 0, 1), sc = 0.6 + 0.4 * easeBack(ap);
+        c.save(); c.globalAlpha = ap * fade; c.translate(x + w.w / 2, y - size * 0.35); c.scale(sc, sc); c.translate(-(x + w.w / 2), -(y - size * 0.35));
+        if (w.hl) { rr(c, x - 12, y - size * 0.92, w.w + 24, size * 1.08, 14); c.fillStyle = PINK; c.fill(); c.fillStyle = "#fff"; c.fillText(w.text, x, y); }
+        else strokeFill(c, w.text, x, y, 14, "#fff");
+        c.restore();
+        x += w.w + c.measureText(" ").width; wi++;
+      });
+    });
+  } else {
+    c.font = "56px Anton, Impact, sans-serif";
+    const lines = wrap(c, P.q, 1000).slice(0, 2);
+    const a = clamp((t - 8) / 0.3, 0, 1); c.globalAlpha = a;
+    lines.forEach((ln, li) => { let x = 40; ln.words.forEach((w) => { if (w.hl) { c.fillStyle = PINK; c.fillText(w.text, x, 300 + li * 62); } else strokeFill(c, w.text, x, 300 + li * 62, 8, "#fff"); x += w.w + c.measureText(" ").width; }); });
+    c.globalAlpha = 1;
+  }
+
+  // Karten unter dem Fenster
+  const CY = 1240, CH = 370;
+  if (t >= P.setupStart && t < P.beatsStart && F.setup) {
+    const dy = card(c, CY, CH, (t - P.setupStart) / 0.3);
+    c.font = "700 28px JetBrains Mono, monospace"; c.fillStyle = CYAN; c.fillText("VERSUCHSAUFBAU", 84, CY + dy + 70);
+    c.font = "70px Anton, Impact, sans-serif";
+    wrap(c, textWords(F.setup.toUpperCase()), 910).slice(0, 3).forEach((ln, li) => { c.fillStyle = "#fff"; c.fillText(ln.words.map((w) => w.text).join(" "), 84, CY + dy + 160 + li * 80); });
+    c.globalAlpha = 1;
+  } else if (t >= P.beatsStart && t < P.resultStart) {
+    const dy = card(c, CY, CH, (t - P.beatsStart) / 0.3);
+    const cur = P.meas.filter((m) => m.start <= t).pop();
+    const nb = P.beatSegs.length, bi = P.beatSegs.findIndex((s) => t >= s.t0 && t < s.t0 + s.d);
+    c.font = "700 28px JetBrains Mono, monospace"; c.fillStyle = CYAN;
+    const hasBars = P.meas.filter((m) => m.num !== null && m.start <= t).length >= 2;
+    const leftW = hasBars ? 440 : 900;
+    if (cur) {
+      const j = P.meas.indexOf(cur) + 1;
+      c.fillText("MESSUNG " + j + "/" + P.meas.length, 84, CY + dy + 66);
+      c.font = "56px Anton, Impact, sans-serif"; c.fillStyle = "#fff";
+      let lab = cur.label.toUpperCase(); while (c.measureText(lab).width > leftW && lab.length > 2) lab = lab.slice(0, -1);
+      c.fillText(lab, 84, CY + dy + 140);
+      const prog = clamp((t - cur.start) / 0.6, 0, 1);
+      let vs = 150; c.font = vs + "px Anton, Impact, sans-serif";
+      let val = fmtNum(cur, easeOut(prog));
+      while (c.measureText(val).width > leftW && vs > 70) { vs -= 8; c.font = vs + "px Anton, Impact, sans-serif"; }
+      const pop = 1 + 0.12 * Math.max(0, 1 - Math.abs(prog - 1) * 6) * (prog >= 1 ? Math.max(0, 1 - (t - cur.start - 0.6) / 0.2) : 0);
+      c.save(); c.translate(84, CY + dy + 310); c.scale(pop, pop); c.fillStyle = PINK; c.fillText(val, 0, 0); c.restore();
+      if (hasBars) bars(c, P, F, t, 560, CY + dy + 46, 440, 5, cur);
+    } else {
+      c.fillText("VERSUCH " + (bi + 1) + "/" + nb, 84, CY + dy + 66);
+      c.font = "70px Anton, Impact, sans-serif"; c.fillStyle = "#fff";
+      wrap(c, textWords(F.setup.toUpperCase() || "LÄUFT …"), 910).slice(0, 3).forEach((ln, li) => c.fillText(ln.words.map((w) => w.text).join(" "), 84, CY + dy + 160 + li * 80));
+    }
+    c.globalAlpha = 1;
+  } else if (t >= P.resultStart && t < P.ctaStart) {
+    const dy = card(c, CY, CH, (t - P.resultStart) / 0.3);
+    if (t < P.stampT) {
+      const n = Math.ceil(P.stampT - t);
+      c.font = "700 28px JetBrains Mono, monospace"; c.fillStyle = CYAN; c.fillText("AUSWERTUNG", 84, CY + dy + 66);
+      const pulse = 0.75 + 0.25 * Math.sin(t * 10);
+      c.font = "120px Anton, Impact, sans-serif"; c.globalAlpha = pulse;
+      c.fillStyle = "#fff"; c.fillText(n <= 3 ? "ERGEBNIS IN " + n : "DAS ERGEBNIS …", 84, CY + dy + 230);
+    } else {
+      c.font = "700 28px JetBrains Mono, monospace"; c.fillStyle = CYAN; c.fillText("ERGEBNIS", 84, CY + dy + 66);
+      c.font = "60px Anton, Impact, sans-serif"; c.fillStyle = "#fff";
+      const lines = wrap(c, textWords((F.resultLine || "").toUpperCase()), 910).slice(0, 2);
+      lines.forEach((ln, li) => c.fillText(ln.words.map((w) => w.text).join(" "), 84, CY + dy + 140 + li * 68));
+      bars(c, P, F, P.ctaStart, 84, CY + dy + 140 + lines.length * 68 - 10, 912, lines.length > 1 ? 2 : 3, null);
+    }
+    c.globalAlpha = 1;
+  } else if (t >= P.ctaStart) {
+    const dy = card(c, CY, CH, (t - P.ctaStart) / 0.3);
+    c.font = "76px Anton, Impact, sans-serif"; c.fillStyle = "#fff";
+    wrap(c, textWords(F.cta.toUpperCase()), 910).slice(0, 2).forEach((ln, li) => c.fillText(ln.words.map((w) => w.text).join(" "), 84, CY + dy + 120 + li * 86));
+    c.font = "700 30px JetBrains Mono, monospace"; c.fillStyle = CYAN; c.fillText("SCHREIB'S IN DIE KOMMENTARE", 84, CY + dy + 320);
+    const bob = Math.sin(t * 8) * 8; c.fillStyle = PINK; c.beginPath(); c.moveTo(640, CY + dy + 296 + bob); c.lineTo(684, CY + dy + 296 + bob); c.lineTo(662, CY + dy + 326 + bob); c.closePath(); c.fill();
+    c.globalAlpha = 1;
+  }
+
+  // Stempel
+  if (t >= P.stampT) {
+    const a = (t - P.stampT) / 0.35, sc = 2.4 - 1.4 * easeBack(a);
+    const col = F.verdict === "BESTÄTIGT" ? GOOD : F.verdict === "WIDERLEGT" ? BAD : PINK;
+    c.save(); c.translate(540, 880); c.rotate(-0.17); c.scale(sc, sc); c.globalAlpha = clamp(a * 2, 0, 1);
+    c.font = "150px Anton, Impact, sans-serif"; const tw = c.measureText(F.verdict).width, w = tw + 110, h = 220;
+    rr(c, -w / 2, -h / 2, w, h, 26); c.fillStyle = "rgba(0,0,0,0.42)"; c.fill(); c.lineWidth = 14; c.strokeStyle = col; c.stroke();
+    rr(c, -w / 2 + 20, -h / 2 + 20, w - 40, h - 40, 16); c.lineWidth = 4; c.stroke();
+    c.fillStyle = col; c.textAlign = "center"; c.fillText(F.verdict, 0, 54); c.restore(); c.textAlign = "left";
+  }
+
+  // Untertitel
+  const ch = t >= P.hookEnd ? P.chunks.find((x) => t >= x.t0 && t < x.t1) : null;
+  if (ch) {
+    c.font = "66px Anton, Impact, sans-serif"; c.textAlign = "center";
+    const pop = 0.9 + 0.1 * easeBack((t - ch.t0) / 0.12);
+    c.save(); c.translate(540, 1105); c.scale(pop, pop);
+    let txt = ch.text; while (c.measureText(txt).width > 940 && txt.length > 4) txt = txt.slice(0, -1);
+    strokeFill(c, txt, 0, 0, 14, "#fff"); c.restore(); c.textAlign = "left";
+  }
+  c.restore();
+
+  // Blitz bei Schnitt und Stempel
+  let flash = 0;
+  if (seg.t0 > 0 && lt < 0.12) flash = 0.32 * (1 - lt / 0.12);
+  if (ds >= 0 && ds < 0.25) flash = Math.max(flash, 0.75 * (1 - ds / 0.25));
+  if (flash > 0) { c.fillStyle = "rgba(255,255,255," + flash.toFixed(3) + ")"; c.fillRect(0, 0, BW, BH); }
+}
+
+/* ---------- Vorschau ---------- */
+const pv = $("#preview"), pctx = pv.getContext("2d");
+let scrubToken = 0;
+async function drawAt(t) {
+  const F = getForm(), P = buildPlan(F); state.lastPlan = P;
+  const my = ++scrubToken;
+  t = clamp(t, 0, P.T - 0.01);
+  const i = segIndexAt(P, t), seg = P.segs[i];
+  let src;
+  if (seg.clip >= 0) {
+    const c = state.clips[seg.clip];
+    let v = state.scrubVids[c.id];
+    if (!v) { v = mkVideo(c.url, true); state.scrubVids[c.id] = v; try { await waitMeta(v); } catch (e) {} }
+    await seek(v, seg.s + (t - seg.t0));
+    if (my !== scrubToken) return;
+    src = frameFrom(v);
+  } else src = synth(seg.s + (t - seg.t0) + i * 3);
+  drawFrame(pctx, pv.width / BW, t, P, src, F);
+}
+function updateMeta() {
+  const F = getForm(), P = buildPlan(F); state.lastPlan = P;
+  $("#scrub").max = P.T.toFixed(1); $("#tEnd").textContent = Math.round(P.T) + " s";
+  $("#stLen").textContent = Math.round(P.T) + " s"; $("#stCuts").textContent = P.segs.length - 1;
+  $("#stTik").textContent = P.T > 60 ? "ja" : "nein";
+  $("#targetOut").textContent = state.voice && state.voice.dur ? Math.round(P.T) + " s (nach Stimme)" : $("#targetLen").value + " s";
+  $("#gameVolOut").textContent = $("#gameVol").value + " %";
+  const cols = { hook: PINK, setup: "#b98cff", beat: CYAN, result: GOOD, cta: "#ffd166" };
+  const names = { hook: "Hook", setup: "Aufbau", beat: "Messung", result: "Ergebnis", cta: "Frage" };
+  const tl = $("#timeline"); tl.innerHTML = "";
+  P.segs.forEach((s) => { const d = document.createElement("div"); d.style.flex = String(s.d); d.style.background = cols[s.kind]; d.style.borderRight = "1px solid #0c0a14"; d.title = names[s.kind] + " · " + fmtS(s.d); tl.appendChild(d); });
+  drawStrips(P);
+}
+let refreshTimer = null;
+function refresh() {
+  clearTimeout(refreshTimer);
+  refreshTimer = setTimeout(() => { save(); updateMeta(); if (!state.busy) drawAt(Number($("#scrub").value)); }, 120);
+}
+
+/* ---------- Abspielen und Aufnehmen ---------- */
+function pickMime() {
+  if (!window.MediaRecorder) return null;
+  const types = ["video/mp4;codecs=avc1.42E01E,mp4a.40.2", "video/mp4;codecs=avc1,mp4a", "video/mp4", "video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm"];
+  return types.find((t) => { try { return MediaRecorder.isTypeSupported(t); } catch (e) { return false; } }) || "";
+}
+
+async function run(record) {
+  if (state.busy) return;
+  const F = getForm(), P = buildPlan(F);
+  if (record && !state.clips.some((c) => c.scores)) { setStatus("Lade zuerst deine Clips. Das Demo-Material lässt sich nur als Vorschau abspielen.", "err"); return; }
+  if (record && pickMime() === null) { setStatus("Dieser Browser kann keine Videos aufnehmen. Bitte Safari oder Chrome in aktueller Version nutzen.", "err"); return; }
+  // AudioContext noch im Klick anlegen, damit iOS den Ton erlaubt
+  let actx = null, dest = null;
+  try { const AC = window.AudioContext || window.webkitAudioContext; actx = new AC(); actx.resume(); dest = actx.createMediaStreamDestination(); } catch (e) { actx = null; dest = null; }
+  state.busy = true; state.stop = false;
+  $("#renderBtn").disabled = true; $("#playBtn").disabled = true; $("#stopBtn").hidden = false;
+  $("#resultVideo").hidden = true; $("#result").classList.remove("show");
+  try { await document.fonts.load("100px Anton"); await document.fonts.load("700 30px JetBrains Mono"); } catch (e) {}
+  const Wc = record ? (F.quality === "1080" ? 1080 : 720) : 540;
+  const canvas = record ? document.createElement("canvas") : pv;
+  canvas.width = Wc; canvas.height = Math.round(Wc * 16 / 9);
+  const ctx = canvas.getContext("2d"); const S = Wc / BW;
+  setStatus("Bereite Szenen vor …"); setProg(0);
+  const players = [];
+  const gameGain = state.voice ? Math.min(F.gameVol, 0.35) : F.gameVol;
+  for (let i = 0; i < P.segs.length; i++) {
+    const seg = P.segs[i];
+    if (seg.clip >= 0) {
+      const clip = state.clips[seg.clip];
+      // Bild immer stumm abspielen, Ton kommt geplant aus dem AudioBuffer
+      const v = mkVideo(clip.url, !!(clip.audioBuf && actx) || !actx);
+      if (!clip.audioBuf && actx) { try { const n = actx.createMediaElementSource(v); const g = actx.createGain(); g.gain.value = gameGain; n.connect(g); g.connect(dest); g.connect(actx.destination); } catch (e) { v.muted = true; } }
+      try { await waitMeta(v); await seek(v, seg.s); } catch (e) {}
+      players.push(v);
+    } else players.push(null);
+    setProg((i + 1) / P.segs.length * 0.15);
+  }
+  const voiceEl = null;
+  let rec = null; const chunks = []; const mime = record ? pickMime() : "";
+  if (record) {
+    const vs = canvas.captureStream ? canvas.captureStream(30) : null;
+    if (!vs) { setStatus("Aufnahme vom Bild wird hier nicht unterstützt.", "err"); cleanup(); return; }
+    const tracks = vs.getVideoTracks().slice(); if (dest) tracks.push(...dest.stream.getAudioTracks());
+    const opts = { videoBitsPerSecond: Wc >= 1080 ? 10e6 : 6e6, audioBitsPerSecond: 160000 }; if (mime) opts.mimeType = mime;
+    try { rec = new MediaRecorder(new MediaStream(tracks), opts); } catch (e) { rec = new MediaRecorder(new MediaStream(tracks)); }
+    rec.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+  }
+  let wake = null; try { if (navigator.wakeLock) wake = await navigator.wakeLock.request("screen"); } catch (e) {}
+  setStatus(record ? "Aufnahme läuft, " + Math.round(P.T) + " s in Echtzeit …" : "Vorschau läuft …");
+  drawFrame(ctx, S, 0, P, players[0] ? frameFrom(players[0]) : synth(0), F);
+  if (rec) rec.start(500);
+  // Ton zeitgenau einplanen
+  let lead = 0;
+  if (actx) {
+    try { await actx.resume(); } catch (e) {}
+    const startAt = actx.currentTime + 0.25; lead = 0.25;
+    P.segs.forEach((seg) => {
+      const clip = seg.clip >= 0 ? state.clips[seg.clip] : null;
+      if (!clip || !clip.audioBuf) return;
+      const n = actx.createBufferSource(); n.buffer = clip.audioBuf;
+      const g = actx.createGain(); g.gain.setValueAtTime(0, startAt + seg.t0); g.gain.linearRampToValueAtTime(gameGain, startAt + seg.t0 + 0.04);
+      n.connect(g); g.connect(dest); g.connect(actx.destination);
+      try { n.start(startAt + seg.t0, Math.min(seg.s, clip.audioBuf.duration - 0.01), Math.max(0.05, seg.d)); } catch (e) {}
+    });
+    if (state.voice && state.voice.buf) {
+      const n = actx.createBufferSource(); n.buffer = state.voice.buf;
+      n.connect(dest); n.connect(actx.destination);
+      try { n.start(startAt + 0.3, 0, Math.max(0.1, P.T - 0.4)); } catch (e) {}
+    }
+  }
+  const t0 = performance.now() + lead * 1000; let cur = -1;
+  await new Promise((resolve) => {
+    const tick = () => {
+      const t = Math.max(0, (performance.now() - t0) / 1000);
+      if (state.stop || t >= P.T) return resolve();
+      const i = segIndexAt(P, t);
+      if (i !== cur) { if (cur >= 0 && players[cur]) players[cur].pause(); cur = i; if (players[i]) players[i].play().catch(() => {}); }
+      const seg = P.segs[i];
+      const src = players[i] ? frameFrom(players[i]) : synth(seg.s + (t - seg.t0) + i * 3);
+      drawFrame(ctx, S, t, P, src, F);
+      if (record) pctx.drawImage(canvas, 0, 0, pv.width, pv.height);
+      $("#scrub").value = t.toFixed(1); $("#tNow").textContent = fmtS(t);
+      setProg(record ? 0.15 + 0.85 * t / P.T : t / P.T);
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  players.forEach((v) => v && v.pause());
+  if (rec) {
+    await new Promise((r) => { rec.onstop = r; try { rec.stop(); } catch (e) { r(); } });
+    if (!state.stop && chunks.length) {
+      const type = (rec.mimeType || mime || "video/webm").split(";")[0];
+      state.resultBlob = new Blob(chunks, { type });
+      state.resultExt = type.includes("mp4") ? "mp4" : "webm";
+      const rv = $("#resultVideo"); rv.src = URL.createObjectURL(state.resultBlob); rv.hidden = false;
+      $("#result").classList.add("show");
+      const mb = (state.resultBlob.size / 1048576).toFixed(1).replace(".", ",");
+      setStatus("Fertig: " + Math.round(P.T) + " s, " + mb + " MB, " + state.resultExt.toUpperCase() + (state.resultExt === "webm" ? ". Hinweis: TikTok am Handy mag MP4 lieber, Safari erzeugt MP4." : "."), "ok");
+      setProg(1);
+    } else if (state.stop) setStatus("Abgebrochen.");
+    else setStatus("Es wurden keine Videodaten aufgenommen. Bitte noch einmal versuchen.", "err");
+  } else setStatus(state.stop ? "Vorschau gestoppt." : "Vorschau fertig. Gefällt dir der Schnitt? Dann „Video erstellen“.", state.stop ? "" : "ok");
+  cleanup();
+  function cleanup() {
+    players.forEach((v) => { if (v) { v.pause(); v.removeAttribute("src"); v.load(); } });
+    if (actx) try { actx.close(); } catch (e) {}
+    try { wake && wake.release(); } catch (e) {}
+    state.busy = false; state.stop = false;
+    $("#renderBtn").disabled = false; $("#playBtn").disabled = false; $("#stopBtn").hidden = true;
+    pv.width = 540; pv.height = 960;
+    if (!record) drawAt(Number($("#scrub").value));
+    else pctx.drawImage(canvas, 0, 0, pv.width, pv.height);
+  }
+}
+
+/* ---------- Speichern ---------- */
+function fileBase() { return "leonida-labor-test-" + (getForm().testNr.replace(/[^\w-]/g, "") || "001"); }
+async function saveBlob(blob, name, btn) {
+  const type = blob.type || (name.endsWith(".png") ? "image/png" : name.endsWith(".mp4") ? "video/mp4" : "video/webm");
+  let file = null;
+  try { file = new File([blob], name, { type }); } catch (e) {}
+  // Am Handy: Teilen-Menü (Video sichern, TikTok, Instagram)
+  if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file], title: name }); setStatus("Geteilt oder gesichert: " + name, "ok"); return; }
+    catch (e) { if (e && e.name === "AbortError") { setStatus("Teilen abgebrochen."); return; } }
+  }
+  // Am Rechner: normaler Download
+  try {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+    setStatus("Heruntergeladen: " + name, "ok");
+  } catch (e) { setStatus("Speichern hat nicht geklappt. Tipp lange auf das Video und wähle Sichern.", "err"); }
+}
+async function saveCover(btn) {
+  const F = getForm(), P = buildPlan(F);
+  const c = document.createElement("canvas"); c.width = 1080; c.height = 1920;
+  const t = Math.min(1.6, P.hookEnd - 0.2), seg = P.segs[segIndexAt(P, t)];
+  let src;
+  if (seg.clip >= 0) { const cl = state.clips[seg.clip]; const v = mkVideo(cl.url, true); try { await waitMeta(v); await seek(v, seg.s + t); } catch (e) {} src = frameFrom(v); }
+  else src = synth(seg.s + t);
+  drawFrame(c.getContext("2d"), 1, t + 2, P, src, F);
+  const blob = await new Promise((r) => c.toBlob(r, "image/png"));
+  if (blob) saveBlob(blob, fileBase() + "-titelbild.png", btn);
+}
+
+/* ---------- KI ---------- */
+function buildPrompt(withImages) {
+  const F = getForm();
+  return [
+    "Du schreibst für den deutschen TikTok-, Reels- und Shorts-Kanal \"Leonida Labor\" (Motto: Ich teste GTA 6, bis es bricht).",
+    "Stil: nüchterner Laborleiter mit trockenem Humor, kurze Sätze, du-Form, kein Clickbait ohne Auflösung, keine Gewaltbeschreibungen.",
+    "Erstelle aus den Notizen alle Texte für einen Short von 61 bis 75 Sekunden.",
+    "WICHTIG: Erfinde keine Messwerte, Namen oder Spielfakten. Nutze nur Zahlen und Namen aus den Notizen. Wenn etwas fehlt, lass es weg.",
+    "Antworte NUR mit JSON in genau dieser Form, ohne weiteren Text:",
+    "{\"question\": \"Frage als Hook, max. 9 Wörter, genau ein Schlüsselwort in *Sternchen*\", \"setup\": \"Versuchsaufbau, max. 12 Wörter\", \"beats\": [{\"label\": \"Name\", \"value\": \"Wert mit Einheit\"}], \"better\": \"high oder low\", \"verdict\": \"BESTÄTIGT oder WIDERLEGT oder ERGEBNIS\", \"result\": \"Ergebnis in einem Satz, max. 10 Wörter\", \"cta\": \"Frage an die Zuschauer, max. 8 Wörter\", \"script\": \"Sprechtext 140 bis 170 Wörter, beginnt mit dem Hook, nennt die Messwerte in Reihenfolge, endet mit der Frage an die Zuschauer\", \"tiktok\": \"Beschreibung max. 150 Zeichen inklusive 4 Hashtags\", \"youtube\": \"Titel max. 60 Zeichen, enthält GTA 6\", \"instagram\": \"2 Sätze plus 5 Hashtags\"}",
+    "",
+    "Test-Nr.: " + F.testNr + (F.patch ? ", Patch " + F.patch : ""),
+    "Notizen: " + ($("#notes").value.trim() || "(keine)"),
+    "Bisherige Frage: " + F.question,
+    withImages ? "Die Bilder zeigen die actionreichsten Momente der Aufnahmen." : "",
+  ].join("\n");
+}
+function applyAI(d) {
+  if (!d || typeof d !== "object") throw new Error("leere Antwort");
+  if (d.question) $("#question").value = d.question;
+  if (d.setup) $("#setup").value = d.setup;
+  if (Array.isArray(d.beats) && d.beats.length) $("#beats").value = d.beats.map((b) => (b.label || "") + " | " + (b.value || "")).join("\n");
+  if (d.better === "low" || d.better === "high") $("#better").value = d.better;
+  if (["BESTÄTIGT", "WIDERLEGT", "ERGEBNIS"].includes(d.verdict)) $("#verdict").value = d.verdict;
+  if (d.result) $("#resultLine").value = d.result;
+  if (d.cta) $("#cta").value = d.cta;
+  if (d.script) $("#script").value = d.script;
+  if (d.tiktok) $("#txtTiktok").value = d.tiktok;
+  if (d.youtube) $("#txtYoutube").value = d.youtube;
+  if (d.instagram) $("#txtInsta").value = d.instagram;
+  refresh();
+}
+function parseJsonLoose(text) {
+  const m = String(text || "").match(/\{[\s\S]*\}/);
+  return JSON.parse(m ? m[0] : text);
+}
+function blobToB64(blob) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(",")[1]); r.onerror = rej; r.readAsDataURL(blob); });
+}
+async function aiFill() {
+  const btn = $("#aiBtn");
+  let key = ""; try { key = localStorage.getItem("labor-short-apikey") || ""; } catch (e) {}
+  key = ($("#apiKey").value.trim() || key).trim();
+  if (!key) {
+    const prompt = buildPrompt(false);
+    try { await navigator.clipboard.writeText(prompt); $("#aiStatus").textContent = "Anfrage kopiert. In der Claude-App einfügen, Antwort unten einfügen."; }
+    catch (e) { $("#aiPaste").value = prompt; $("#aiStatus").textContent = "Kopieren ging nicht. Die Anfrage steht unten, bitte markieren und kopieren."; }
+    $("#pasteBox").hidden = false;
+    return;
+  }
+  btn.disabled = true; $("#aiStatus").textContent = "KI schreibt …";
+  try {
+    const imgs = state.clips.filter((c) => c.bestBlob).slice(0, 3).map((c) => c.bestBlob);
+    const content = [];
+    for (const b of imgs) content.push({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: await blobToB64(b) } });
+    content.push({ type: "text", text: buildPrompt(imgs.length > 0) });
+    const r = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" },
+      body: JSON.stringify({ model: "claude-sonnet-5-5", max_tokens: 1800, messages: [{ role: "user", content }] }),
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error((j && j.error && j.error.message) || ("Fehler " + r.status));
+    const text = (j.content || []).filter((x) => x.type === "text").map((x) => x.text).join("");
+    applyAI(parseJsonLoose(text));
+    $("#aiStatus").textContent = "Fertig. Bitte kurz gegenlesen.";
+  } catch (e) {
+    $("#aiStatus").textContent = "Hat nicht geklappt: " + (e.message || e) + ". Prüfe den Schlüssel oder nutze den Weg ohne Schlüssel.";
+  } finally { btn.disabled = false; }
+}
+
+/* ---------- Ereignisse ---------- */
+loadSaved();
+FIELDS.forEach((id) => { const el = $("#" + id); el.addEventListener("input", refresh); el.addEventListener("change", refresh); });
+$("#fileClips").addEventListener("change", (e) => { if (e.target.files.length) addClips(e.target.files); e.target.value = ""; });
+const drop = $("#drop");
+["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", (e) => { if (e.dataTransfer && e.dataTransfer.files.length) addClips(e.dataTransfer.files); });
+drop.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("#fileClips").click(); } });
+$("#fileVoice").addEventListener("change", (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  $("#voiceInfo").textContent = "Lese Sprachaufnahme …";
+  const url = URL.createObjectURL(f);
+  (async () => {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext; const ac = new AC();
+      const buf = await new Promise((res, rej) => { f.arrayBuffer().then((ab) => ac.decodeAudioData(ab, res, rej)).catch(rej); });
+      try { ac.close(); } catch (e) {}
+      state.voice = { url, dur: buf.duration, buf, name: f.name };
+      $("#voiceInfo").textContent = "Stimme: " + f.name + " · " + fmtS(buf.duration) + (buf.duration > 87 ? " · länger als 90 s, wird abgeschnitten" : "") + ". Spielton wird automatisch leiser.";
+      e.target.value = "";
+      refresh();
+    } catch (err) {
+      state.voice = null;
+      $("#voiceInfo").textContent = "Die Sprachaufnahme konnte nicht gelesen werden. Bitte M4A, MP3 oder WAV nutzen.";
+    }
+  })();
+});
+$("#scrub").addEventListener("input", (e) => { const t = Number(e.target.value); $("#tNow").textContent = fmtS(t); if (!state.busy) drawAt(t); });
+$("#playBtn").addEventListener("click", () => run(false));
+$("#renderBtn").addEventListener("click", () => run(true));
+$("#stopBtn").addEventListener("click", () => { state.stop = true; });
+$("#saveBtn").addEventListener("click", (e) => { if (state.resultBlob) saveBlob(state.resultBlob, fileBase() + "." + state.resultExt, e.currentTarget); });
+$("#coverBtn").addEventListener("click", (e) => saveCover(e.currentTarget));
+$("#nextBtn").addEventListener("click", () => {
+  const n = parseInt($("#testNr").value, 10); if (!isNaN(n)) $("#testNr").value = String(n + 1).padStart(3, "0");
+  $("#result").classList.remove("show"); $("#resultVideo").hidden = true; state.resultBlob = null; setStatus("Test #" + $("#testNr").value + " vorbereitet. Neue Clips laden.");
+  state.clips.forEach((c) => URL.revokeObjectURL(c.url)); state.clips = []; state.scrubVids = {}; renderClips(); refresh();
+});
+document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+  const ta = $("#" + b.dataset.copy);
+  try { await navigator.clipboard.writeText(ta.value); b.textContent = "Kopiert"; }
+  catch (e) { ta.focus(); ta.select(); b.textContent = "Markiert"; }
+  setTimeout(() => { b.textContent = "Kopieren"; }, 1600);
+}));
+$("#aiBtn").addEventListener("click", aiFill);
+
+$("#aiApply").addEventListener("click", () => {
+  try { applyAI(parseJsonLoose($("#aiPaste").value)); $("#aiStatus").textContent = "Übernommen. Bitte kurz gegenlesen."; $("#pasteBox").hidden = true; $("#aiPaste").value = ""; }
+  catch (e) { $("#aiStatus").textContent = "Das war kein gültiges Ergebnis. Bitte die komplette Antwort mit den geschweiften Klammern einfügen."; }
+});
+try { const k = localStorage.getItem("labor-short-apikey"); if (k) $("#apiKey").value = k; } catch (e) {}
+$("#apiKey").addEventListener("change", () => { try { const v = $("#apiKey").value.trim(); if (v) localStorage.setItem("labor-short-apikey", v); else localStorage.removeItem("labor-short-apikey"); } catch (e) {} });
+if ("serviceWorker" in navigator && location.protocol === "https:") { navigator.serviceWorker.register("sw.js").catch(() => {}); }
+
+updateMeta();
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => drawAt(Number($("#scrub").value)));
+setTimeout(() => drawAt(Number($("#scrub").value)), 900);
+})();
+</script>
+</body>
+</html>
