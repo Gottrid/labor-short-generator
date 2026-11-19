@@ -1,52 +1,52 @@
 {
-  "datum": "2026-11-18",
-  "trend": "Morgen erscheint GTA 6: Alle wollen wissen, was im Spiel wirklich geht. Die ersten Tests auf Deutsch gewinnen die Suche.",
+  "datum": "2026-11-19",
+  "trend": "GTA 6 ist seit heute Nacht draußen (Metacritic 99): Alle teilen erste Glitch-Clips und probieren das neue Polizei-System mit Beschreibung, Zeugen und Outfitwechsel aus.",
   "ideen": [
     {
-      "titel": "Welches Auto ist *wirklich* das schnellste?",
-      "warum": "Zum Release suchen alle nach dem schnellsten Auto, deutsche Messvideos gibt es noch kaum.",
-      "aufbau": "Gleiche gerade Strecke, Vollgas aus dem Stand, jedes Auto einzeln.",
-      "drehplan": ["Eine lange gerade Straße suchen und den Start markieren", "Jedes Auto einzeln aufnehmen, immer gleicher Start", "Tacho oder Ziel deutlich im Bild lassen", "Den schnellsten Lauf am Ende nochmal aufnehmen"],
-      "kategorie": "Härtetest",
+      "titel": "Täuscht ein *Outfitwechsel* wirklich die Polizei?",
+      "warum": "Tests und Tipps zum Release sagen, die Polizei sucht nach deiner Kleidung und ein Outfitwechsel hilft bei der Flucht, das will jetzt jeder selbst prüfen.",
+      "aufbau": "Gleiche kleine Fahndung zweimal: einmal nur verstecken, einmal Sichtkontakt brechen und Outfit wechseln, gemessen wird die Zeit bis die Fahndung endet.",
+      "drehplan": ["Vorher ein zweites Outfit im Kofferraum ablegen", "Kleine Fahndung mit einem Stern auslösen, ohne Gewalt", "Lauf A: nur verstecken und Zeit stoppen, Lauf B: am gleichen Ort umziehen und Zeit stoppen", "HUD mit Sternen und Fahndungsbereich deutlich im Bild lassen"],
+      "kategorie": "Mythen-Labor",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
+      "quelle": {"titel": "GTA 6 Polizei: Fahndungssterne, Heat-System und Flucht (PlayCentral)", "url": "https://www.playcentral.de/gta-6-polizei-fahndungssterne-heat-system/"}
     },
     {
-      "titel": "Was passiert am *Rand* der Karte?",
-      "warum": "Neue Karte, neue Grenzen: Kartenrand-Videos laufen bei jedem GTA-Release.",
-      "aufbau": "Mit Auto, Boot und zu Fuß bis an den Kartenrand und schauen, was passiert.",
-      "drehplan": ["Mit dem Boot so weit wie möglich aufs Meer fahren", "Zu Fuß an eine Kartengrenze laufen", "Den Moment aufnehmen, wenn das Spiel dich stoppt"],
+      "titel": "Fliegen Autos in GTA 6 *wirklich* durch die Luft?",
+      "warum": "Clips von Autos und einem Truck, die nach Unfällen in die Luft schießen, gehen seit dem Launch viral.",
+      "aufbau": "Zehn gleiche Crashs gegen ein festes Hindernis, gezählt wird, wie oft ein Auto abhebt und wie hoch im Vergleich zu einer Laterne.",
+      "drehplan": ["Leere Straße ohne Passanten mit Laterne oder Mauer suchen", "Zehnmal mit gleichem Auto und Vollgas gegen dasselbe Hindernis fahren", "Jeden Crash aus gleicher Kamera aufnehmen und Abheber mitzählen", "Den höchsten Flug am Ende in Zeitlupe zeigen"],
       "kategorie": "Physik am Limit",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 interaktive Karte (GTA Base)", "url": "https://www.gtabase.com/de/gta-6/karte/"}
+      "quelle": {"titel": "GTA 6 glitches go viral: Flying cars, disappearing characters and police encounter issues (Gulf News)", "url": "https://gulfnews.com/technology/gaming/gta-6-glitches-go-viral-flying-cars-disappearing-characters-and-police-encounter-issues-spark-cyberpunk-2077-comparisons-1.500752989"}
     },
     {
-      "titel": "Polizei loswerden: Welche Methode ist *am schnellsten*?",
-      "warum": "Einsteiger fragen in den ersten Tagen immer, wie man die Polizei abhängt.",
-      "aufbau": "Gleiche Fahndungsstufe, drei Fluchtmethoden, Zeit bis die Polizei aufgibt.",
-      "drehplan": ["Fahndung auslösen, immer gleiche Stufe", "Methode 1: Auto, Methode 2: Boot, Methode 3: verstecken", "Die Uhr oder Spielzeit im Blick behalten"],
-      "kategorie": "Härtetest",
-      "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
-    },
-    {
-      "titel": "Wie *gefährlich* sind Alligatoren in GTA 6?",
-      "warum": "Die Alligatoren aus den Trailern sind seit Jahren ein Meme, jetzt kann man sie testen.",
-      "aufbau": "Ins Wasser bei Alligatoren gehen, Zeit bis zum Angriff messen.",
-      "drehplan": ["Einen Sumpf mit Alligatoren suchen", "Ins Wasser gehen und Zeit stoppen", "Einmal mit Boot, einmal schwimmend"],
+      "titel": "Reagieren NPCs wirklich auf deinen *Blinker*?",
+      "warum": "Laut Kotaku-Tipps zum Release reagieren NPC-Fahrer auf den Blinker, ein perfekter Mythos für den ersten Tag.",
+      "aufbau": "An derselben Kreuzung zehnmal mit und zehnmal ohne Blinker abbiegen, gezählt wird, wie oft NPCs bremsen, warten oder hupen.",
+      "drehplan": ["Belebte Kreuzung in Vice City suchen", "Zehnmal ohne Blinker abbiegen und Reaktionen zählen", "Zehnmal mit Blinker abbiegen und Reaktionen zählen", "Das Ergebnis als Strichliste einblenden"],
       "kategorie": "Mythen-Labor",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 interaktive Karte (GTA Base)", "url": "https://www.gtabase.com/de/gta-6/karte/"}
+      "quelle": {"titel": "32 Spoiler-Free Tips As You Hop Into Grand Theft Auto 6 (Kotaku)", "url": "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016"}
     },
     {
-      "titel": "Was passiert, wenn du *nichts* tust?",
-      "warum": "Simpler Neugier-Short, funktioniert zum Release besonders gut als Einstieg.",
-      "aufbau": "Fünf Minuten stillstehen und aufnehmen, wie die Welt reagiert.",
-      "drehplan": ["Mitten in Vice City stehen bleiben", "Fünf Minuten nichts drücken", "Auffällige Reaktionen von Passanten festhalten"],
-      "kategorie": "Systeme erklärt",
+      "titel": "Lohnt sich *RydeMe* für 100 Dollar?",
+      "warum": "Einsteiger-Guides zum Launch nennen RydeMe als Schnellreise für 100 Dollar, viele fragen sich, ob selbst fahren schneller ist.",
+      "aufbau": "Gleiche Strecke einmal selbst fahren und einmal per RydeMe reisen, gemessen werden echte Sekunden und Kosten.",
+      "drehplan": ["Start und Ziel festlegen, möglichst quer durch die Stadt", "Lauf A: selbst fahren und echte Zeit stoppen", "Lauf B: RydeMe rufen, Schnellreise nutzen und Zeit stoppen", "Kontostand vorher und nachher zeigen"],
+      "kategorie": "Spieler-Hilfe",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 Release am 19. November 2026", "url": "https://www.drohnen.de/77444/gta-6-release-datum-2026-aktuell-alle-offiziellen-infos-verschiebungen-ps5-xbox-trailer-leaks/"}
+      "quelle": {"titel": "32 Spoiler-Free Tips As You Hop Into Grand Theft Auto 6 (Kotaku)", "url": "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016"}
+    },
+    {
+      "titel": "Was bringt *Essen* in GTA 6 wirklich?",
+      "warum": "Release-Tipps sagen, Essen und Trinken stärken Gesundheit, Ausdauer und Fokus, aber niemand hat es gemessen.",
+      "aufbau": "Gleicher Sprint einmal hungrig und einmal nach dem Essen, gemessen wird die Zeit bis die Ausdauer leer ist.",
+      "drehplan": ["Gerade, lange Strecke zu Fuß wählen", "Lauf A: ohne Essen sprinten und Zeit bis zur Erschöpfung stoppen", "Etwas essen oder trinken und die Anzeigen zeigen", "Lauf B: gleicher Sprint, Zeit stoppen und vergleichen"],
+      "kategorie": "Systeme erklärt",
+      "potenzial": "mittel",
+      "quelle": {"titel": "32 Spoiler-Free Tips As You Hop Into Grand Theft Auto 6 (Kotaku)", "url": "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016"}
     }
   ],
-  "sonntag": [0, 2]
+  "sonntag": [0, 1]
 }
