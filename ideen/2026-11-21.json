@@ -1,0 +1,77 @@
+{
+  "datum": "2026-11-21",
+  "trend": "Drei Tage nach dem Launch jagen alle Easter Eggs: Ein Ei vom Funkturm löst eine Geheimszene aus, dazu kursieren Reddit-Funde wie eine piepende Pferdestatue, sprechende Papageien und ein unheimlicher Scharfschützen-Glitch.",
+  "ideen": [
+    {
+      "titel": "Löst ein *Ei* vom Funkturm eine Geheimszene aus?",
+      "warum": "Ein Spieler hat oben auf einem Funkturm in Leonida ein Vogelnest mit bunten Eiern gefunden, und ein Wurf auf die Straße soll eine kurze Zwischensequenz auslösen.",
+      "aufbau": "Gemessen werden die Kletterzeit bis zur Spitze, die Zahl der Würfe bis zur Szene und ob sie auch ohne getroffenes Auto startet.",
+      "drehplan": [
+        "Am Fuß des Funkturms Stoppuhr starten und die Leiter bis ganz nach oben klettern",
+        "Oben das Vogelnest zeigen und ein Ei aufnehmen",
+        "Ei Richtung Straße werfen, jeden Versuch zählen, bis die Szene läuft",
+        "Zum Vergleich einen Wurf ins Leere ohne Auto aufnehmen"
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Easter Egg Is Literally an Egg, and Throwing It From a Tower Unlocks a Secret Cutscene", "url": "https://www.ibtimes.co.uk/gta-6-player-discovers-literal-easter-egg-leonida-1833342"}
+    },
+    {
+      "titel": "Teleportiert dieser NPC nachts wirklich *hinter* dich?",
+      "warum": "Auf Reddit berichten Spieler, dass ein Passant nachts beim Anvisieren mit dem Scharfschützengewehr unverwundbar wird und plötzlich hinter einem steht, möglicherweise ein Glitch.",
+      "aufbau": "Getestet wird bei Nacht und bei Tag, wie oft ein nur anvisierter Passant verschwindet und nach wie vielen Sekunden er hinter dir auftaucht.",
+      "drehplan": [
+        "Nachts mit Scharfschützengewehr auf ein Dach stellen und einen Passanten nur anvisieren, nicht schießen",
+        "Zielfernrohr 30 Sekunden halten und laut mitzählen",
+        "Kamera drehen und prüfen, ob jemand hinter dir steht",
+        "Gleichen Versuch tagsüber wiederholen und Ergebnisse vergleichen"
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "hoch",
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+    },
+    {
+      "titel": "Warum *vibriert* der Controller an dieser Pferdestatue?",
+      "warum": "Spieler melden eine Statue nahe Manifest Canyon mit vier Pferden voller Symbole, bei der der Controller vibriert und es piept, ein Pferd trägt einen Leitkegel.",
+      "aufbau": "Gemessen wird, ab welcher Entfernung Vibration und Piepen einsetzen und ob sie näher an der Statue stärker oder schneller werden.",
+      "drehplan": [
+        "Statue bei Manifest Canyon aus der Ferne zeigen, inklusive Pferd mit Leitkegel",
+        "In kleinen Schritten zu Fuß nähern und Entfernung per Kartenmarkierung notieren",
+        "Controller sichtbar filmen oder Vibration ansagen, Piepen im Ton lassen",
+        "Jedes der vier Pferde einzeln anlaufen und vergleichen"
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "hoch",
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+    },
+    {
+      "titel": "Haben geklaute Autos wirklich einen *leeren* Tank?",
+      "warum": "Laut PC Gamer ist Tanken kaum nötig, weil ein voller Tank lange hält, gestohlene Autos sollen aber oft fast leer starten.",
+      "aufbau": "Bei fünf geparkten Autos wird direkt nach dem Einsteigen die Tankanzeige im HUD abgelesen und mit dem eigenen Auto sowie den Tankkosten verglichen.",
+      "drehplan": [
+        "Eigenes Auto: Steuerkreuz unten drücken und die Tankanzeige filmen",
+        "Fünf verschiedene geparkte Autos übernehmen und jeweils sofort die Tankfarbe (grün, gelb, rot) zeigen",
+        "Mit dem leersten Auto zur Tankstelle, Services und Tanken wählen, Preis filmen",
+        "Ergebnis als Strichliste auf den Bildschirm legen"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {"titel": "Refueling cars in GTA 6 is barely necessary, but there's much better reason to visit garages", "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-refuel-repair-cars/"}
+    },
+    {
+      "titel": "Verrät dir ein *Papagei* wirklich verstecktes Geld?",
+      "warum": "Auf Reddit kursiert ein Fund aus einem Spirituosenladen in den Keys, in dem sprechende Papageien jubeln und einer auf Bargeld bei einem Generator hinweisen soll.",
+      "aufbau": "Getestet wird, ob der Papagei den Hinweis jedes Mal gibt, wie viel Geld am Generator liegt und ob es nach einem Neuladen wieder auftaucht.",
+      "drehplan": [
+        "Spirituosenladen in den Keys anfahren und die Papageien im Bild zeigen",
+        "Dem Papagei zuhören und den Satz zum Geld einblenden",
+        "Zum Generator laufen, Geld aufsammeln und Betrag notieren",
+        "Spielstand neu laden und prüfen, ob Hinweis und Geld zurückkommen"
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "mittel",
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+    }
+  ],
+  "sonntag": [0, 1]
+}

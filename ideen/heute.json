@@ -1,77 +1,77 @@
 {
-  "datum": "2026-11-20",
-  "trend": "Tag zwei nach dem Launch: Ein Glitch für die fehlende Ego-Perspektive geht viral, dazu Bigfoot-Sichtungen im Sumpf, ein Rettungshund auf dem Jetski und viele Einsteigerfragen zu Geld, Tod und Autos.",
+  "datum": "2026-11-21",
+  "trend": "Drei Tage nach dem Launch jagen alle Easter Eggs: Ein Ei vom Funkturm löst eine Geheimszene aus, dazu kursieren Reddit-Funde wie eine piepende Pferdestatue, sprechende Papageien und ein unheimlicher Scharfschützen-Glitch.",
   "ideen": [
     {
-      "titel": "Gibt es in GTA 6 doch eine *Ego-Perspektive*?",
-      "warum": "GTA 6 hat offiziell keinen Ego-Modus, aber seit gestern geht ein PS5-Glitch viral, der ihn im Auto freischalten soll.",
-      "aufbau": "Den Glitch nach Anleitung zehnmal versuchen und messen, wie oft er klappt, wie lange er hält und ob man nur per Spielstand zurückkommt.",
+      "titel": "Löst ein *Ei* vom Funkturm eine Geheimszene aus?",
+      "warum": "Ein Spieler hat oben auf einem Funkturm in Leonida ein Vogelnest mit bunten Eiern gefunden, und ein Wurf auf die Straße soll eine kurze Zwischensequenz auslösen.",
+      "aufbau": "Gemessen werden die Kletterzeit bis zur Spitze, die Zahl der Würfe bis zur Szene und ob sie auch ohne getroffenes Auto startet.",
       "drehplan": [
-        "Vorher manuell speichern, denn laut Bericht kommt man nur durch Neuladen zurück.",
-        "Einstellungen > Controller > Touchpad-Taste von Karte auf Kamera umstellen und das zeigen.",
-        "Ins Auto auf den Fahrersitz, Handy öffnen und schnell Kreis und Touchpad drücken, Versuche und Treffer zählen.",
-        "Klappt es: 30 Sekunden in Ego-Sicht fahren, dann Spielstand laden und das Ergebnis stempeln."
-      ],
-      "kategorie": "Physik am Limit",
-      "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 glitch lets players access first-person mode (Dexerto)", "url": "https://www.dexerto.com/gta/gta-6-glitch-lets-players-access-first-person-mode-3430025/"}
-    },
-    {
-      "titel": "Lebt im Sumpf von Leonida wirklich ein *Bigfoot*?",
-      "warum": "Laut Kotaku-Liveblog berichten Spieler seit dem Launch, Bigfoot in den Sümpfen gefunden zu haben.",
-      "aufbau": "20 Minuten Spielzeit bei Nacht durch das Sumpfgebiet fahren und alle Tiersichtungen zählen, um zu prüfen, ob Bigfoot auftaucht.",
-      "drehplan": [
-        "Auf der Karte zum Sumpfgebiet fahren und die Uhrzeit im Spiel festhalten.",
-        "Mit Boot oder zu Fuß eine feste Runde abfahren, Bildschirmaufnahme läuft durchgehend.",
-        "Jede Tiersichtung auf einem Zettel zählen, verdächtige Silhouetten sofort heranzoomen.",
-        "Nach 20 Minuten Strichliste zeigen und BESTÄTIGT oder WIDERLEGT stempeln."
+        "Am Fuß des Funkturms Stoppuhr starten und die Leiter bis ganz nach oben klettern",
+        "Oben das Vogelnest zeigen und ein Ei aufnehmen",
+        "Ei Richtung Straße werfen, jeden Versuch zählen, bis die Szene läuft",
+        "Zum Vergleich einen Wurf ins Leere ohne Auto aufnehmen"
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Launch Live Updates: News, Conversations And Discoveries (Kotaku)", "url": "https://kotaku.com/live-updates-on-gta-6-the-biggest-launch-in-gaming-history-2000758030"}
+      "quelle": {"titel": "GTA 6 Easter Egg Is Literally an Egg, and Throwing It From a Tower Unlocks a Secret Cutscene", "url": "https://www.ibtimes.co.uk/gta-6-player-discovers-literal-easter-egg-leonida-1833342"}
     },
     {
-      "titel": "Rettet dich auf hoher See wirklich ein *Hund*?",
-      "warum": "Kotaku und Windows Central berichten von einem Hund mit Brille, der gestrandete Spieler mit dem Jetski rettet.",
-      "aufbau": "Dreimal weit aufs Meer hinausschwimmen und messen, wie lange es dauert, bis der Hund auf dem Jetski auftaucht, und wohin er dich bringt.",
+      "titel": "Teleportiert dieser NPC nachts wirklich *hinter* dich?",
+      "warum": "Auf Reddit berichten Spieler, dass ein Passant nachts beim Anvisieren mit dem Scharfschützengewehr unverwundbar wird und plötzlich hinter einem steht, möglicherweise ein Glitch.",
+      "aufbau": "Getestet wird bei Nacht und bei Tag, wie oft ein nur anvisierter Passant verschwindet und nach wie vielen Sekunden er hinter dir auftaucht.",
       "drehplan": [
-        "Mit einem Boot weit vor die Küste fahren und ins Wasser springen, Boot wegtreiben lassen.",
-        "Stoppuhr starten und schwimmen, bis der Jetski-Hund erscheint oder 5 Minuten vorbei sind.",
-        "Die Rettung filmen und festhalten, wo du abgesetzt wirst.",
-        "Das Ganze dreimal wiederholen und die Zeiten vergleichen."
+        "Nachts mit Scharfschützengewehr auf ein Dach stellen und einen Passanten nur anvisieren, nicht schießen",
+        "Zielfernrohr 30 Sekunden halten und laut mitzählen",
+        "Kamera drehen und prüfen, ob jemand hinter dir steht",
+        "Gleichen Versuch tagsüber wiederholen und Ergebnisse vergleichen"
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "hoch",
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+    },
+    {
+      "titel": "Warum *vibriert* der Controller an dieser Pferdestatue?",
+      "warum": "Spieler melden eine Statue nahe Manifest Canyon mit vier Pferden voller Symbole, bei der der Controller vibriert und es piept, ein Pferd trägt einen Leitkegel.",
+      "aufbau": "Gemessen wird, ab welcher Entfernung Vibration und Piepen einsetzen und ob sie näher an der Statue stärker oder schneller werden.",
+      "drehplan": [
+        "Statue bei Manifest Canyon aus der Ferne zeigen, inklusive Pferd mit Leitkegel",
+        "In kleinen Schritten zu Fuß nähern und Entfernung per Kartenmarkierung notieren",
+        "Controller sichtbar filmen oder Vibration ansagen, Piepen im Ton lassen",
+        "Jedes der vier Pferde einzeln anlaufen und vergleichen"
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 players are ignoring crime to jet-ski with dogs and redecorate their bedrooms (Windows Central)", "url": "https://www.windowscentral.com/gaming/gta-6-players-are-ignoring-crime-to-jet-ski-with-dogs-and-redecorate-their-bedrooms-the-funniest-clips-so-far"}
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
     },
     {
-      "titel": "Wie viel Geld verlierst du, wenn du *stirbst*?",
-      "warum": "Einsteiger rätseln über Autospeichern und Strafen, und laut TechRadar schützt nur eine Einzahlung per Handy-App das Bargeld nach Wasted oder Festnahme.",
-      "aufbau": "Kontostand vor und nach einem Wasted vergleichen, einmal mit Bargeld in der Tasche und einmal nach dem Einzahlen per Handy-App.",
+      "titel": "Haben geklaute Autos wirklich einen *leeren* Tank?",
+      "warum": "Laut PC Gamer ist Tanken kaum nötig, weil ein voller Tank lange hält, gestohlene Autos sollen aber oft fast leer starten.",
+      "aufbau": "Bei fünf geparkten Autos wird direkt nach dem Einsteigen die Tankanzeige im HUD abgelesen und mit dem eigenen Auto sowie den Tankkosten verglichen.",
       "drehplan": [
-        "Bargeld im HUD abfilmen und notieren.",
-        "Von einem Dach springen, bis Wasted erscheint, dann neuen Bargeldstand zeigen.",
-        "Geld per Bank-App auf dem Handy einzahlen (falls freigeschaltet) und den Sprung wiederholen.",
-        "Beide Verluste in Dollar nebeneinanderstellen und den Tipp stempeln."
+        "Eigenes Auto: Steuerkreuz unten drücken und die Tankanzeige filmen",
+        "Fünf verschiedene geparkte Autos übernehmen und jeweils sofort die Tankfarbe (grün, gelb, rot) zeigen",
+        "Mit dem leersten Auto zur Tankstelle, Services und Tanken wählen, Preis filmen",
+        "Ergebnis als Strichliste auf den Bildschirm legen"
       ],
       "kategorie": "Spieler-Hilfe",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 secrets, tips and reactions live on launch day (TechRadar)", "url": "https://www.techradar.com/live/news/gta-6-launch-day-november-19"}
+      "quelle": {"titel": "Refueling cars in GTA 6 is barely necessary, but there's much better reason to visit garages", "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-refuel-repair-cars/"}
     },
     {
-      "titel": "Wie viel teurer macht ein Crash die *Lackiererei*?",
-      "warum": "Laut dem neuen Red-Bull-Einsteigerguide hängt der Preis bei Pay 'n' Spray vom Zustand des Fahrzeugs ab.",
-      "aufbau": "Dasselbe Auto unbeschädigt, leicht und schwer beschädigt zu Pay 'n' Spray fahren und die angezeigten Preise vergleichen.",
+      "titel": "Verrät dir ein *Papagei* wirklich verstecktes Geld?",
+      "warum": "Auf Reddit kursiert ein Fund aus einem Spirituosenladen in den Keys, in dem sprechende Papageien jubeln und einer auf Bargeld bei einem Generator hinweisen soll.",
+      "aufbau": "Getestet wird, ob der Papagei den Hinweis jedes Mal gibt, wie viel Geld am Generator liegt und ob es nach einem Neuladen wieder auftaucht.",
       "drehplan": [
-        "Mit einem unbeschädigten Auto in die Pay-'n'-Spray-Werkstatt fahren und den Preis abfilmen, ohne zu bezahlen.",
-        "Einmal leicht gegen eine Wand fahren und den Preis erneut zeigen.",
-        "Mehrere harte Crashs bauen, bis das Auto stark beschädigt ist, und den dritten Preis zeigen.",
-        "Die drei Preise als Balken einblenden und stempeln."
+        "Spirituosenladen in den Keys anfahren und die Papageien im Bild zeigen",
+        "Dem Papagei zuhören und den Satz zum Geld einblenden",
+        "Zum Generator laufen, Geld aufsammeln und Betrag notieren",
+        "Spielstand neu laden und prüfen, ob Hinweis und Geld zurückkommen"
       ],
-      "kategorie": "Systeme erklärt",
+      "kategorie": "Mythen-Labor",
       "potenzial": "mittel",
-      "quelle": {"titel": "GTA 6-Einsteigerguide: Wichtige Tipps und versteckte Spielmechaniken (Red Bull)", "url": "https://www.redbull.com/de-de/gta-6-tipps-guide"}
+      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
     }
   ],
-  "sonntag": [0, 2]
+  "sonntag": [0, 1]
 }
