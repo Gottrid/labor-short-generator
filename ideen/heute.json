@@ -1,76 +1,76 @@
 {
-  "datum": "2026-11-21",
-  "trend": "Drei Tage nach dem Launch jagen alle Easter Eggs: Ein Ei vom Funkturm löst eine Geheimszene aus, dazu kursieren Reddit-Funde wie eine piepende Pferdestatue, sprechende Papageien und ein unheimlicher Scharfschützen-Glitch.",
+  "datum": "2026-11-22",
+  "trend": "Tag vier nach dem Launch: Abstürze mit Fehler CE-108255-1 und Updates ohne Patchnotes nerven, ein unbestätigter Leistungs-Patch zum 25. November geht herum, und Spieler teilen versteckte Funktionen wie das L2-Menü bei Passanten.",
   "ideen": [
     {
-      "titel": "Löst ein *Ei* vom Funkturm eine Geheimszene aus?",
-      "warum": "Ein Spieler hat oben auf einem Funkturm in Leonida ein Vogelnest mit bunten Eiern gefunden, und ein Wurf auf die Straße soll eine kurze Zwischensequenz auslösen.",
-      "aufbau": "Gemessen werden die Kletterzeit bis zur Spitze, die Zahl der Würfe bis zur Szene und ob sie auch ohne getroffenes Auto startet.",
+      "titel": "Welches Geheim-Menü öffnet *L2* bei Passanten?",
+      "warum": "Ein viraler Clip vom 21. November zeigt, dass L2 bei jedem NPC ein Interaktionsmenü öffnet, das viele noch nicht kennen.",
+      "aufbau": "Bei 5 verschiedenen Passanten L2 halten und zählen, wie viele Optionen erscheinen und wie oft jede Reaktion friedlich bleibt.",
       "drehplan": [
-        "Am Fuß des Funkturms Stoppuhr starten und die Leiter bis ganz nach oben klettern",
-        "Oben das Vogelnest zeigen und ein Ei aufnehmen",
-        "Ei Richtung Straße werfen, jeden Versuch zählen, bis die Szene läuft",
-        "Zum Vergleich einen Wurf ins Leere ohne Auto aufnehmen"
+        "In einer belebten Straße zu Fuß 5 unterschiedliche Passanten auswählen.",
+        "Bei jedem L2 halten und das Menü mit allen Optionen kurz einblenden lassen.",
+        "Pro Passant eine harmlose Option wählen und die Reaktion filmen.",
+        "Ergebnisse als Strichliste notieren: Optionen pro Menü und friedliche Reaktionen von 5."
       ],
-      "kategorie": "Mythen-Labor",
+      "kategorie": "Systeme erklärt",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Easter Egg Is Literally an Egg, and Throwing It From a Tower Unlocks a Secret Cutscene", "url": "https://www.ibtimes.co.uk/gta-6-player-discovers-literal-easter-egg-leonida-1833342"}
+      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
     },
     {
-      "titel": "Teleportiert dieser NPC nachts wirklich *hinter* dich?",
-      "warum": "Auf Reddit berichten Spieler, dass ein Passant nachts beim Anvisieren mit dem Scharfschützengewehr unverwundbar wird und plötzlich hinter einem steht, möglicherweise ein Glitch.",
-      "aufbau": "Getestet wird bei Nacht und bei Tag, wie oft ein nur anvisierter Passant verschwindet und nach wie vielen Sekunden er hinter dir auftaucht.",
+      "titel": "Wann speichert GTA 6 *wirklich* automatisch?",
+      "warum": "Viele Spieler verlieren nach Abstürzen Stunden, weil die automatische Speicherung nur nach Missionen und bestimmten Ereignissen läuft.",
+      "aufbau": "Fünf typische Aktionen ausprobieren und messen, nach welcher das Speicher-Symbol erscheint und wie viele Minuten Fortschritt ohne Speichern verloren gehen.",
       "drehplan": [
-        "Nachts mit Scharfschützengewehr auf ein Dach stellen und einen Passanten nur anvisieren, nicht schießen",
-        "Zielfernrohr 30 Sekunden halten und laut mitzählen",
-        "Kamera drehen und prüfen, ob jemand hinter dir steht",
-        "Gleichen Versuch tagsüber wiederholen und Ergebnisse vergleichen"
+        "Stoppuhr starten und nacheinander frei fahren, einkaufen, Fahrzeug wechseln und eine Mission beenden.",
+        "Bei jeder Aktion auf das Speicher-Symbol achten und den Zeitpunkt notieren.",
+        "Nach 10 Minuten ohne Speichern das Spiel neu laden und zeigen, wo du wieder einsteigst.",
+        "Zum Schluss das manuelle Speichern im Menü zeigen."
       ],
-      "kategorie": "Physik am Limit",
-      "potenzial": "hoch",
-      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Patch Notes and Updates: Day-One Patch, Sizes, Fixes", "url": "https://gta6pocket.com/en/patch-notes/"}
     },
     {
-      "titel": "Warum *vibriert* der Controller an dieser Pferdestatue?",
-      "warum": "Spieler melden eine Statue nahe Manifest Canyon mit vier Pferden voller Symbole, bei der der Controller vibriert und es piept, ein Pferd trägt einen Leitkegel.",
-      "aufbau": "Gemessen wird, ab welcher Entfernung Vibration und Piepen einsetzen und ob sie näher an der Statue stärker oder schneller werden.",
+      "titel": "Gibt es Autos, die du *nicht* klauen kannst?",
+      "warum": "Ein Clip legt nahe, dass sich manche Autos nicht stehlen lassen, bestätigt ist das bisher nicht.",
+      "aufbau": "Zehn geparkte und fahrende Autos verschiedener Klassen testen und zählen, wie viele sich klauen lassen und wie lange es jeweils dauert.",
       "drehplan": [
-        "Statue bei Manifest Canyon aus der Ferne zeigen, inklusive Pferd mit Leitkegel",
-        "In kleinen Schritten zu Fuß nähern und Entfernung per Kartenmarkierung notieren",
-        "Controller sichtbar filmen oder Vibration ansagen, Piepen im Ton lassen",
-        "Jedes der vier Pferde einzeln anlaufen und vergleichen"
+        "Auf einem Parkplatz 5 geparkte Autos unterschiedlicher Klassen nacheinander versuchen.",
+        "An einer Ampel 5 fahrende Autos versuchen und die Sekunden bis zum Losfahren stoppen.",
+        "Jeden Fehlschlag mit Fahrzeugtyp und Situation kurz festhalten.",
+        "Ergebnis als Quote einblenden: geklaut von 10."
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "hoch",
-      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
     },
     {
-      "titel": "Haben geklaute Autos wirklich einen *leeren* Tank?",
-      "warum": "Laut PC Gamer ist Tanken kaum nötig, weil ein voller Tank lange hält, gestohlene Autos sollen aber oft fast leer starten.",
-      "aufbau": "Bei fünf geparkten Autos wird direkt nach dem Einsteigen die Tankanzeige im HUD abgelesen und mit dem eigenen Auto sowie den Tankkosten verglichen.",
+      "titel": "Läuft GTA 6 wirklich komplett *offline*?",
+      "warum": "Wegen PSN-Problemen und Startschwierigkeiten fragen viele, ob die Story ohne Internet spielbar ist, sobald Spiel und Update installiert sind.",
+      "aufbau": "Die Konsole vom Internet trennen und prüfen, ob Start, Story, Speichern und Handy-Funktionen im Spiel funktionieren.",
       "drehplan": [
-        "Eigenes Auto: Steuerkreuz unten drücken und die Tankanzeige filmen",
-        "Fünf verschiedene geparkte Autos übernehmen und jeweils sofort die Tankfarbe (grün, gelb, rot) zeigen",
-        "Mit dem leersten Auto zur Tankstelle, Services und Tanken wählen, Preis filmen",
-        "Ergebnis als Strichliste auf den Bildschirm legen"
+        "Internetverbindung in den Konsolen-Einstellungen sichtbar trennen.",
+        "GTA 6 starten und die Ladezeit bis ins Spiel stoppen.",
+        "Kurz fahren, manuell speichern und das Handy im Spiel öffnen.",
+        "Jede Funktion mit funktioniert oder funktioniert nicht abhaken."
       ],
       "kategorie": "Spieler-Hilfe",
       "potenzial": "hoch",
-      "quelle": {"titel": "Refueling cars in GTA 6 is barely necessary, but there's much better reason to visit garages", "url": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-refuel-repair-cars/"}
+      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
     },
     {
-      "titel": "Verrät dir ein *Papagei* wirklich verstecktes Geld?",
-      "warum": "Auf Reddit kursiert ein Fund aus einem Spirituosenladen in den Keys, in dem sprechende Papageien jubeln und einer auf Bargeld bei einem Generator hinweisen soll.",
-      "aufbau": "Getestet wird, ob der Papagei den Hinweis jedes Mal gibt, wie viel Geld am Generator liegt und ob es nach einem Neuladen wieder auftaucht.",
+      "titel": "Führt dieses Boot-GPS wirklich nach *Los Santos*?",
+      "warum": "Spieler haben vor Jasons Unterschlupf ein Marquis-Boot wie das von Michael aus GTA V entdeckt, dessen GPS laut Game Rant nach Los Santos zeigt.",
+      "aufbau": "Das Boot finden, das GPS ablesen und testen, wie weit du der angezeigten Richtung aufs Meer folgen kannst, bevor etwas passiert.",
       "drehplan": [
-        "Spirituosenladen in den Keys anfahren und die Papageien im Bild zeigen",
-        "Dem Papagei zuhören und den Satz zum Geld einblenden",
-        "Zum Generator laufen, Geld aufsammeln und Betrag notieren",
-        "Spielstand neu laden und prüfen, ob Hinweis und Geld zurückkommen"
+        "Zum Boot vor Jasons Unterschlupf fahren und es von außen filmen.",
+        "Das GPS oder die Anzeige im Boot nah heranzoomen.",
+        "Mit einem Boot in die angezeigte Richtung fahren und die Fahrzeit stoppen.",
+        "Festhalten, was am Ende passiert: Kartenrand, Hindernis oder Überraschung."
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "mittel",
-      "quelle": {"titel": "9 GTA 6 easter eggs we've spotted that you might have missed", "url": "https://www.gamingbible.com/news/gta-6-easter-eggs-778903-20261120"}
+      "quelle": {"titel": "GTA 6 news — latest news and updates (November 2026)", "url": "https://vgtimes.com/games/gta-6/news/"}
     }
   ],
   "sonntag": [0, 1]
