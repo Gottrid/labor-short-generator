@@ -1,77 +1,95 @@
 {
-  "datum": "2026-11-22",
-  "trend": "Tag vier nach dem Launch: Abstürze mit Fehler CE-108255-1 und Updates ohne Patchnotes nerven, ein unbestätigter Leistungs-Patch zum 25. November geht herum, und Spieler teilen versteckte Funktionen wie das L2-Menü bei Passanten.",
+  "datum": "2026-11-23",
+  "trend": "Tag fünf nach dem Launch: Clips von NPCs, die sich extrem wehren, und ein virales Video über Jasons Beziehungsaufgaben für Lucia gehen herum, dazu Debatten über schwächere Zielhilfe, während Rockstar weiter keine Patchnotes liefert.",
   "ideen": [
     {
-      "titel": "Welches Geheim-Menü öffnet *L2* bei Passanten?",
-      "warum": "Ein viraler Clip vom 21. November zeigt, dass L2 bei jedem NPC ein Interaktionsmenü öffnet, das viele noch nicht kennen.",
-      "aufbau": "Bei 5 verschiedenen Passanten L2 halten und zählen, wie viele Optionen erscheinen und wie oft jede Reaktion friedlich bleibt.",
+      "titel": "Ab wann überlebst du den *Absprung* nicht mehr?",
+      "warum": "Ein viraler Vergleich von Heist Network zeigt den Sprung aus einem fahrenden Auto in GTA 6 gegen Cyberpunk 2077 und alle diskutieren die neue Ragdoll-Physik.",
+      "aufbau": "Nach 3, 6 und 10 Sekunden Vollgas aus demselben Auto springen und jeweils Lebensverlust, Rutschweite und Liegezeit messen.",
       "drehplan": [
-        "In einer belebten Straße zu Fuß 5 unterschiedliche Passanten auswählen.",
-        "Bei jedem L2 halten und das Menü mit allen Optionen kurz einblenden lassen.",
-        "Pro Passant eine harmlose Option wählen und die Reaktion filmen.",
-        "Ergebnisse als Strichliste notieren: Optionen pro Menü und friedliche Reaktionen von 5."
+        "Gerade, leere Straße suchen und ein normales Auto nehmen.",
+        "Stoppuhr starten, Vollgas geben und nach 3, 6 und 10 Sekunden abspringen, jeden Versuch einzeln aufnehmen.",
+        "Lebensbalken vor und nach jedem Sprung im Bild festhalten.",
+        "Die drei Landungen in Zeitlupe nebeneinander schneiden."
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "sehr hoch",
+      "quelle": {
+        "titel": "GTA 6 Day 5 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-5-live-updates-179682/"
+      }
+    },
+    {
+      "titel": "Womit gewinnst du Lucias *Herz* am schnellsten?",
+      "warum": "Ein virales Video über Jasons Aufgaben für Lucia geht seit heute herum, und die Beziehung hat vier Stufen mit einer Herz-Anzeige für Aktionen, die Lucia gefallen.",
+      "aufbau": "Drei gemeinsame Aktivitäten nacheinander machen und messen, wie viel Zeit jede kostet und wie sich Herz-Anzeige und Beziehungsstufe verändern.",
+      "drehplan": [
+        "Beziehungsstufe im Menü vor dem Test abfilmen.",
+        "Drei verschiedene gemeinsame Aktivitäten mit Lucia starten und jede mit der Stoppuhr messen.",
+        "Nach jeder Aktivität Herz-Anzeige und Beziehungsstufe erneut abfilmen.",
+        "Ergebnis als Rangliste Zeit pro Fortschritt zeigen."
       ],
       "kategorie": "Systeme erklärt",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
+      "quelle": {
+        "titel": "'Go Find a New Man': Viral GTA 6 Video Warns Women About What Their Boyfriends Are Doing in the Game",
+        "url": "https://www.ibtimes.co.uk/gta-6-viral-video-jason-lucia-relationship-tasks-1833967"
+      }
     },
     {
-      "titel": "Wann speichert GTA 6 *wirklich* automatisch?",
-      "warum": "Viele Spieler verlieren nach Abstürzen Stunden, weil die automatische Speicherung nur nach Missionen und bestimmten Ereignissen läuft.",
-      "aufbau": "Fünf typische Aktionen ausprobieren und messen, nach welcher das Speicher-Symbol erscheint und wie viele Minuten Fortschritt ohne Speichern verloren gehen.",
+      "titel": "Ist die *Zielhilfe* in GTA 6 wirklich schwächer?",
+      "warum": "Auf X beschweren sich Spieler, dass die Zielhilfe deutlich schwächer sei als in GTA 5, bestätigt ist das nicht.",
+      "aufbau": "Mit jedem im Menü verfügbaren Zielmodus 20 Schüsse auf die Reifen geparkter Autos abgeben und Treffer sowie Zeit bis zum Treffer zählen.",
       "drehplan": [
-        "Stoppuhr starten und nacheinander frei fahren, einkaufen, Fahrzeug wechseln und eine Mission beenden.",
-        "Bei jeder Aktion auf das Speicher-Symbol achten und den Zeitpunkt notieren.",
-        "Nach 10 Minuten ohne Speichern das Spiel neu laden und zeigen, wo du wieder einsteigst.",
-        "Zum Schluss das manuelle Speichern im Menü zeigen."
-      ],
-      "kategorie": "Spieler-Hilfe",
-      "potenzial": "sehr hoch",
-      "quelle": {"titel": "GTA 6 Patch Notes and Updates: Day-One Patch, Sizes, Fixes", "url": "https://gta6pocket.com/en/patch-notes/"}
-    },
-    {
-      "titel": "Gibt es Autos, die du *nicht* klauen kannst?",
-      "warum": "Ein Clip legt nahe, dass sich manche Autos nicht stehlen lassen, bestätigt ist das bisher nicht.",
-      "aufbau": "Zehn geparkte und fahrende Autos verschiedener Klassen testen und zählen, wie viele sich klauen lassen und wie lange es jeweils dauert.",
-      "drehplan": [
-        "Auf einem Parkplatz 5 geparkte Autos unterschiedlicher Klassen nacheinander versuchen.",
-        "An einer Ampel 5 fahrende Autos versuchen und die Sekunden bis zum Losfahren stoppen.",
-        "Jeden Fehlschlag mit Fahrzeugtyp und Situation kurz festhalten.",
-        "Ergebnis als Quote einblenden: geklaut von 10."
+        "Zielmodus in den Einstellungen abfilmen und den ersten Modus wählen.",
+        "Vor einer Reihe geparkter Autos aus fester Entfernung 20 Schüsse auf Reifen abgeben und Treffer zählen.",
+        "Zielmodus wechseln und den Durchgang identisch wiederholen.",
+        "Trefferquoten als Balken nebeneinander zeigen."
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
+      "quelle": {
+        "titel": "GTA 6 Day 5 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-5-live-updates-179682/"
+      }
     },
     {
-      "titel": "Läuft GTA 6 wirklich komplett *offline*?",
-      "warum": "Wegen PSN-Problemen und Startschwierigkeiten fragen viele, ob die Story ohne Internet spielbar ist, sobald Spiel und Update installiert sind.",
-      "aufbau": "Die Konsole vom Internet trennen und prüfen, ob Start, Story, Speichern und Handy-Funktionen im Spiel funktionieren.",
+      "titel": "Wie oft wehren sich Fahrer beim *Autoklau*?",
+      "warum": "Clips von Fahrern, die sich beim Autoklau heftig wehren, hupen oder Jason aus dem Auto ziehen wollen, gehen seit dem Wochenende viral.",
+      "aufbau": "Zehn Autos an derselben Kreuzung übernehmen und zählen, wie viele Fahrer fliehen, sich wehren oder das Auto zurückholen wollen.",
       "drehplan": [
-        "Internetverbindung in den Konsolen-Einstellungen sichtbar trennen.",
-        "GTA 6 starten und die Ladezeit bis ins Spiel stoppen.",
-        "Kurz fahren, manuell speichern und das Handy im Spiel öffnen.",
-        "Jede Funktion mit funktioniert oder funktioniert nicht abhaken."
+        "Belebte Kreuzung mit Ampel wählen.",
+        "Zehn Autoklau-Versuche hintereinander aufnehmen, ohne Waffe in der Hand.",
+        "Jede Reaktion mit einer Strichliste festhalten: flieht, wehrt sich, verfolgt.",
+        "Lustigsten Versuch als Hook an den Anfang schneiden."
+      ],
+      "kategorie": "Härtetest",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6 Players Share Clips of NPCs Who Fight Back Way Too Hard",
+        "url": "https://shiftdelete.net/en/gta-6-npcs-fight-back-viral-clips"
+      }
+    },
+    {
+      "titel": "Wo findest du die meisten *Vögel* in Leonida?",
+      "warum": "Vogelbeobachter feiern das optionale Logbuch, in dem Jason per Fernglas über 60 Vogelarten erfassen kann.",
+      "aufbau": "An zwei Orten je 10 Minuten mit dem Fernglas suchen und neue Logbuch-Einträge pro Ort zählen.",
+      "drehplan": [
+        "Logbuch-Stand vor dem Test abfilmen.",
+        "10 Minuten am Strand mit dem Fernglas Vögel bestimmen, Stoppuhr im Bild.",
+        "10 Minuten im Sumpf oder an einem See wiederholen.",
+        "Neue Einträge pro Ort im Logbuch vergleichen."
       ],
       "kategorie": "Spieler-Hilfe",
-      "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 Day 4 Live Updates: News, Fixes, Best Clips and Guides", "url": "https://happygamer.com/gta-6-day-4-live-updates-178460/"}
-    },
-    {
-      "titel": "Führt dieses Boot-GPS wirklich nach *Los Santos*?",
-      "warum": "Spieler haben vor Jasons Unterschlupf ein Marquis-Boot wie das von Michael aus GTA V entdeckt, dessen GPS laut Game Rant nach Los Santos zeigt.",
-      "aufbau": "Das Boot finden, das GPS ablesen und testen, wie weit du der angezeigten Richtung aufs Meer folgen kannst, bevor etwas passiert.",
-      "drehplan": [
-        "Zum Boot vor Jasons Unterschlupf fahren und es von außen filmen.",
-        "Das GPS oder die Anzeige im Boot nah heranzoomen.",
-        "Mit einem Boot in die angezeigte Richtung fahren und die Fahrzeit stoppen.",
-        "Festhalten, was am Ende passiert: Kartenrand, Hindernis oder Überraschung."
-      ],
-      "kategorie": "Mythen-Labor",
       "potenzial": "mittel",
-      "quelle": {"titel": "GTA 6 news — latest news and updates (November 2026)", "url": "https://vgtimes.com/games/gta-6/news/"}
+      "quelle": {
+        "titel": "World's Most Notorious Crime Game GTA 6 Has Bird Watchers Buying It Just To Spot 62 Species With Binoculars",
+        "url": "https://www.ibtimes.co.uk/gta-6-birdwatching-logbook-62-bird-species-1833006"
+      }
     }
   ],
-  "sonntag": [0, 1]
+  "sonntag": [
+    0,
+    1
+  ]
 }

@@ -1,0 +1,95 @@
+{
+  "datum": "2026-11-23",
+  "trend": "Tag fünf nach dem Launch: Clips von NPCs, die sich extrem wehren, und ein virales Video über Jasons Beziehungsaufgaben für Lucia gehen herum, dazu Debatten über schwächere Zielhilfe, während Rockstar weiter keine Patchnotes liefert.",
+  "ideen": [
+    {
+      "titel": "Ab wann überlebst du den *Absprung* nicht mehr?",
+      "warum": "Ein viraler Vergleich von Heist Network zeigt den Sprung aus einem fahrenden Auto in GTA 6 gegen Cyberpunk 2077 und alle diskutieren die neue Ragdoll-Physik.",
+      "aufbau": "Nach 3, 6 und 10 Sekunden Vollgas aus demselben Auto springen und jeweils Lebensverlust, Rutschweite und Liegezeit messen.",
+      "drehplan": [
+        "Gerade, leere Straße suchen und ein normales Auto nehmen.",
+        "Stoppuhr starten, Vollgas geben und nach 3, 6 und 10 Sekunden abspringen, jeden Versuch einzeln aufnehmen.",
+        "Lebensbalken vor und nach jedem Sprung im Bild festhalten.",
+        "Die drei Landungen in Zeitlupe nebeneinander schneiden."
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "sehr hoch",
+      "quelle": {
+        "titel": "GTA 6 Day 5 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-5-live-updates-179682/"
+      }
+    },
+    {
+      "titel": "Womit gewinnst du Lucias *Herz* am schnellsten?",
+      "warum": "Ein virales Video über Jasons Aufgaben für Lucia geht seit heute herum, und die Beziehung hat vier Stufen mit einer Herz-Anzeige für Aktionen, die Lucia gefallen.",
+      "aufbau": "Drei gemeinsame Aktivitäten nacheinander machen und messen, wie viel Zeit jede kostet und wie sich Herz-Anzeige und Beziehungsstufe verändern.",
+      "drehplan": [
+        "Beziehungsstufe im Menü vor dem Test abfilmen.",
+        "Drei verschiedene gemeinsame Aktivitäten mit Lucia starten und jede mit der Stoppuhr messen.",
+        "Nach jeder Aktivität Herz-Anzeige und Beziehungsstufe erneut abfilmen.",
+        "Ergebnis als Rangliste Zeit pro Fortschritt zeigen."
+      ],
+      "kategorie": "Systeme erklärt",
+      "potenzial": "sehr hoch",
+      "quelle": {
+        "titel": "'Go Find a New Man': Viral GTA 6 Video Warns Women About What Their Boyfriends Are Doing in the Game",
+        "url": "https://www.ibtimes.co.uk/gta-6-viral-video-jason-lucia-relationship-tasks-1833967"
+      }
+    },
+    {
+      "titel": "Ist die *Zielhilfe* in GTA 6 wirklich schwächer?",
+      "warum": "Auf X beschweren sich Spieler, dass die Zielhilfe deutlich schwächer sei als in GTA 5, bestätigt ist das nicht.",
+      "aufbau": "Mit jedem im Menü verfügbaren Zielmodus 20 Schüsse auf die Reifen geparkter Autos abgeben und Treffer sowie Zeit bis zum Treffer zählen.",
+      "drehplan": [
+        "Zielmodus in den Einstellungen abfilmen und den ersten Modus wählen.",
+        "Vor einer Reihe geparkter Autos aus fester Entfernung 20 Schüsse auf Reifen abgeben und Treffer zählen.",
+        "Zielmodus wechseln und den Durchgang identisch wiederholen.",
+        "Trefferquoten als Balken nebeneinander zeigen."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6 Day 5 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-5-live-updates-179682/"
+      }
+    },
+    {
+      "titel": "Wie oft wehren sich Fahrer beim *Autoklau*?",
+      "warum": "Clips von Fahrern, die sich beim Autoklau heftig wehren, hupen oder Jason aus dem Auto ziehen wollen, gehen seit dem Wochenende viral.",
+      "aufbau": "Zehn Autos an derselben Kreuzung übernehmen und zählen, wie viele Fahrer fliehen, sich wehren oder das Auto zurückholen wollen.",
+      "drehplan": [
+        "Belebte Kreuzung mit Ampel wählen.",
+        "Zehn Autoklau-Versuche hintereinander aufnehmen, ohne Waffe in der Hand.",
+        "Jede Reaktion mit einer Strichliste festhalten: flieht, wehrt sich, verfolgt.",
+        "Lustigsten Versuch als Hook an den Anfang schneiden."
+      ],
+      "kategorie": "Härtetest",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6 Players Share Clips of NPCs Who Fight Back Way Too Hard",
+        "url": "https://shiftdelete.net/en/gta-6-npcs-fight-back-viral-clips"
+      }
+    },
+    {
+      "titel": "Wo findest du die meisten *Vögel* in Leonida?",
+      "warum": "Vogelbeobachter feiern das optionale Logbuch, in dem Jason per Fernglas über 60 Vogelarten erfassen kann.",
+      "aufbau": "An zwei Orten je 10 Minuten mit dem Fernglas suchen und neue Logbuch-Einträge pro Ort zählen.",
+      "drehplan": [
+        "Logbuch-Stand vor dem Test abfilmen.",
+        "10 Minuten am Strand mit dem Fernglas Vögel bestimmen, Stoppuhr im Bild.",
+        "10 Minuten im Sumpf oder an einem See wiederholen.",
+        "Neue Einträge pro Ort im Logbuch vergleichen."
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "mittel",
+      "quelle": {
+        "titel": "World's Most Notorious Crime Game GTA 6 Has Bird Watchers Buying It Just To Spot 62 Species With Binoculars",
+        "url": "https://www.ibtimes.co.uk/gta-6-birdwatching-logbook-62-bird-species-1833006"
+      }
+    }
+  ],
+  "sonntag": [
+    0,
+    1
+  ]
+}
