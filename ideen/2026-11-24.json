@@ -1,0 +1,77 @@
+{
+  "datum": "2026-11-24",
+  "trend": "Der erste Patch 01.002.002 ist da und repariert Abstürze, Autosave, Story-Anrufe, das hängende Wetter und die Fahndung, während auf Xbox ein Quick-Resume-Trick mit 60 FPS und doppeltem Spieltempo die Runde macht.",
+  "ideen": [
+    {
+      "titel": "Wechselt das *Wetter* nach dem Patch wirklich?",
+      "warum": "Update 01.002.002 vom 23. November soll das Wetter reparieren, das tagelang nicht wechselte, und viele Spieler hielten den Fehler sogar für ein Feature.",
+      "aufbau": "Mit Patch an einem festen Ort 20 Minuten Echtzeit warten und jeden Wetterwechsel mit Spielzeit und Echtzeit protokollieren.",
+      "drehplan": [
+        "In den Spielinfos die Version 01.002.002 abfilmen als Beweis",
+        "Mit Blick auf Himmel und Skyline an einen festen Ort stellen und Stoppuhr starten",
+        "Jeden Wetterwechsel mit Echtzeit und Spieluhr als kurzen Clip festhalten",
+        "Ergebnis zählen: Wechsel pro 20 Minuten, Stempel BESTÄTIGT oder WIDERLEGT"
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "New GTA 6 Update Patch Notes Released for November 23", "url": "https://gamerant.com/new-gta-6-update-patch-notes-november-23-2026/"}
+    },
+    {
+      "titel": "Läuft GTA 6 per *Quick-Resume* doppelt so schnell?",
+      "warum": "Ein Reddit-Fund geht viral, nach dem GTA 6 auf Xbox Series X|S über Quick Resume mit bis zu 60 FPS läuft, aber die Spielzeit an die Bildrate gekoppelt ist.",
+      "aufbau": "Dieselbe Strecke zu Fuß normal und nach dem Quick-Resume-Trick ablaufen und Dauer sowie FPS-Eindruck vergleichen.",
+      "drehplan": [
+        "Nur Xbox Series X|S mit 120-Hz-Fernseher: normale Laufstrecke im Innenraum mit Stoppuhr abfilmen",
+        "Trick nach Anleitung: Ausgabe 60 Hz, GTA 6 starten bis zu den sechs Sternen, zurück auf 120 Hz",
+        "Anderes Spiel über den Guide starten, per Quick Resume zu GTA 6 zurück",
+        "Gleiche Strecke erneut stoppen und beide Zeiten im Split-Screen zeigen"
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "hoch",
+      "quelle": {"titel": "GTA 6 Xbox Quick Resume glitch hits 60fps, but runs gameplay at double speed", "url": "https://maketecheasier.com/gta-6-quick-resume-framerate-glitch/"}
+    },
+    {
+      "titel": "Kann man die nervige *Vignette* wirklich abschalten?",
+      "warum": "Spieler beschweren sich, dass sich Vignette und Tiefenunschärfe nicht abschalten lassen, und in den Kommentaren kursiert der Tipp mit dem Regler für die Intensität der Spielereffekte.",
+      "aufbau": "Dieselbe Szene mit dem Effekt-Regler auf Minimum, Mitte und Maximum aufnehmen und die Abdunklung der Bildecken vergleichen.",
+      "drehplan": [
+        "Eine helle, ruhige Szene wählen und Kamera fest ausrichten",
+        "Im Grafikmenü den Regler für Spielereffekte suchen und abfilmen",
+        "Gleiche Szene bei Minimum, Mitte und Maximum je 5 Sekunden aufnehmen",
+        "Ecken im Schnitt nebeneinander zeigen und Urteil stempeln"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {"titel": "First GTA 6 PS5 Patch Live Now, Get All the Details Here", "url": "https://www.pushsquare.com/news/2026/11/first-gta-6-ps5-patch-live-now-get-all-the-details-here"}
+    },
+    {
+      "titel": "Wie viele *Kreuzheben* schaffst du am Stück?",
+      "warum": "Der Patch behebt den Fehler, dass die Kreuzhebe-Stange im Fitnessstudio nicht benutzbar war, jetzt kann man sie erstmals richtig testen.",
+      "aufbau": "An der Kreuzhebe-Stange so viele Wiederholungen wie möglich machen und Anzahl, Dauer und sichtbare Anzeigen protokollieren.",
+      "drehplan": [
+        "Fitnessstudio auf der Karte ansteuern und Ankunft filmen",
+        "An der Kreuzhebe-Stange Stoppuhr starten und Wiederholungen zählen",
+        "Bildschirmanzeigen vor und nach dem Training abfilmen",
+        "Zweiten Durchgang machen und beide Ergebnisse vergleichen"
+      ],
+      "kategorie": "Härtetest",
+      "potenzial": "mittel",
+      "quelle": {"titel": "New GTA 6 Update Patch Notes Released for November 23", "url": "https://gamerant.com/new-gta-6-update-patch-notes-november-23-2026/"}
+    },
+    {
+      "titel": "Fällt dein Boot wirklich durch den *Steg*?",
+      "warum": "Spieler berichten nach dem ersten Patch von einem Boot, das den Spieler abwirft oder durch einen Steg fällt.",
+      "aufbau": "Zehnmal mit einem Boot an einem Steg anlegen und zählen, wie oft es durchfällt, schleudert oder sauber hält.",
+      "drehplan": [
+        "Boot nehmen und einen Steg mit gutem Kamerawinkel suchen",
+        "Zehn Anlegeversuche mit unterschiedlichem Tempo aufnehmen",
+        "Jeden Versuch als sauber, Schleuderer oder Durchfaller notieren",
+        "Trefferquote einblenden und Stempel setzen"
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "mittel",
+      "quelle": {"titel": "First GTA 6 PS5 Patch Live Now, Get All the Details Here", "url": "https://www.pushsquare.com/news/2026/11/first-gta-6-ps5-patch-live-now-get-all-the-details-here"}
+    }
+  ],
+  "sonntag": [0, 2]
+}
