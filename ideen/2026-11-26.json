@@ -1,0 +1,95 @@
+{
+  "datum": "2026-11-26",
+  "trend": "Eine Woche nach dem Launch lachen alle über den gemalten Looney-Tunes-Tunnel in Vice City, an dem reihenweise Spieler zerschellen, während Einsteiger fragen, wie man Missionen wiederholt und versteckte Frisuren per Waink-App freischaltet.",
+  "ideen": [
+    {
+      "titel": "Kommt irgendein Fahrzeug durch den gemalten *Tunnel*?",
+      "warum": "Seit dem 23. November geht der Looney-Tunes-Fake-Tunnel im Vice Decor District viral, weil Spieler reihenweise gegen die bemalte Wand fahren.",
+      "aufbau": "Verschiedene Fahrzeuge und Tempi fahren gegen das Wandbild und gemessen wird, ob irgendetwas durchkommt und wie viel Schaden Auto und Figur bei welcher Geschwindigkeit nehmen.",
+      "drehplan": [
+        "Im Vice Decor District vom Fufu-Laden etwa 160 m Richtung Tankstelle fahren und das Tunnel-Wandbild aus Fahrersicht filmen",
+        "Mit demselben Auto dreimal anfahren: langsam, mittel, Vollgas, und nach jedem Aufprall Schaden und Lebensanzeige aufnehmen",
+        "Ein Motorrad und zu Fuß als Gegenprobe gegen die Wand testen",
+        "Zum Schluss Zeitlupen-Replay oder Rückblick des härtesten Aufpralls für den Stempel nutzen"
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "sehr hoch",
+      "quelle": {
+        "titel": "Where To Find The Painted Tunnel In GTA 6",
+        "url": "https://www.thegamer.com/gta-6-painted-tunnel-prank/"
+      }
+    },
+    {
+      "titel": "Sieht GTA 6 wirklich aus wie der *Trailer*?",
+      "warum": "Ein Spieler hat laut den Day-8-Liveupdates den Enthüllungstrailer Einstellung für Einstellung im fertigen Spiel nachgebaut, und der Clip geht herum.",
+      "aufbau": "Drei markante Einstellungen aus dem ersten Trailer werden auf der Konsole nachgestellt und für jede wird gemessen, wie lange das Nachstellen dauert und wie viele Bilddetails übereinstimmen.",
+      "drehplan": [
+        "Drei gut wiedererkennbare Einstellungen aus dem ersten Trailer auswählen und als Vergleich bereitlegen",
+        "Die Orte auf der Karte anfahren und die Kamera möglichst genau wie im Trailer ausrichten",
+        "Pro Einstellung Zeit stoppen und Übereinstimmungen wie Licht, Gebäude und Verkehr abhaken",
+        "Beide Bilder für den Split-Screen-Vergleich nacheinander aufnehmen"
+      ],
+      "kategorie": "Härtetest",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6 Day 8 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-8-live-updates-184101/"
+      }
+    },
+    {
+      "titel": "Schaltet ein *Magazin* wirklich geheime Frisuren frei?",
+      "warum": "Spieler haben entdeckt, dass man versteckte Magazine mit der Waink-App scannt, um exklusive Frisuren für Jason und Looks für Lucia freizuschalten, eine offizielle Anleitung von Rockstar gibt es dafür nicht.",
+      "aufbau": "Ein Magazin wird mit Waink gescannt und verglichen wird die Frisurenauswahl im Salon vorher und nachher sowie die Zeit von der Suche bis zur Freischaltung.",
+      "drehplan": [
+        "Im Friseursalon die aktuelle Frisurenliste abfilmen und die Anzahl notieren",
+        "Mit einem Community-Guide den nächsten Magazin-Fundort anfahren und Zeit stoppen",
+        "Nah ans Magazin gehen, Waink-Hinweis abwarten und das Cover scannen",
+        "Zurück in den Salon und die neue Liste mit der alten vergleichen"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6: Zocker entdecken verstecktes Feature",
+        "url": "https://www.notebookcheck.com/GTA-6-Zocker-entdecken-verstecktes-Feature.1459128.0.html"
+      }
+    },
+    {
+      "titel": "Kann man Missionen in GTA 6 *wiederholen*?",
+      "warum": "Viele fragen gerade nach einem Missions-Wiederholen-Menü, das es laut aktuellen Guides nicht gibt, sodass nur Neustart, Checkpoint und manuelle Speicherstände bleiben.",
+      "aufbau": "Getestet wird, welche Wege es gibt, eine Mission erneut zu spielen, und gemessen werden die Zeit pro Methode und die Zahl der verfügbaren Speicherplätze.",
+      "drehplan": [
+        "Im Pausenmenü und auf der Karte nach einer Wiederholen-Option suchen und das Ergebnis filmen",
+        "In einer laufenden Mission einmal Checkpoint erneut versuchen und einmal Mission neu starten, jeweils Zeit stoppen",
+        "Die Speicherplätze im manuellen Speichermenü durchzählen",
+        "Vor einer Mission manuell speichern, Mission spielen und den Stand neu laden"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "Can You Replay Missions in GTA 6? How to Go Back to a Mission",
+        "url": "https://happygamer.com/can-you-replay-missions-gta-6-184124"
+      }
+    },
+    {
+      "titel": "Wie lange wartest du auf den viralen *Radio-Hit*?",
+      "warum": "Carly Rae Jepsens Run Away With Me ist im GTA-6-Soundtrack und geht dadurch laut Bericht vom 25. November wieder viral.",
+      "aufbau": "Die Radiosender werden der Reihe nach durchgeschaltet und gemessen wird, auf welchem Sender und nach wie vielen Minuten der Song zum ersten Mal läuft.",
+      "drehplan": [
+        "Stoppuhr starten und mit einem Auto losfahren",
+        "Alle Radiosender der Reihe nach durchschalten und je Sender kurz den laufenden Titel festhalten",
+        "Auf dem Sender mit dem Song bleiben bzw. weiterschalten, bis er läuft, und die Zeit notieren",
+        "Den Moment, in dem der Song startet, mit Fahrt durch Vice City aufnehmen"
+      ],
+      "kategorie": "Systeme erklärt",
+      "potenzial": "mittel",
+      "quelle": {
+        "titel": "This decade-old Carly Rae Jepsen song is going viral thanks to GTA 6",
+        "url": "https://www.queerty.com/this-decade-old-carly-rae-jepsen-song-is-going-viral-thanks-to-gta-6-but-lets-not-forget-who-loved-it-first-%F0%9F%98%8F-20261125/"
+      }
+    }
+  ],
+  "sonntag": [
+    0,
+    1
+  ]
+}

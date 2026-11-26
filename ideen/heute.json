@@ -1,90 +1,90 @@
 {
-  "datum": "2026-11-25",
-  "trend": "Eine Woche nach dem Launch jagen alle das UFO-Easter-Egg um 2 Uhr nachts und die Cheat-Codes, lachen über einen Zug, der sich an einer Brücke zur Schlange verbiegt, und warten auf einen angeblichen Leistungs-Patch zum 25. November.",
+  "datum": "2026-11-26",
+  "trend": "Eine Woche nach dem Launch lachen alle über den gemalten Looney-Tunes-Tunnel in Vice City, an dem reihenweise Spieler zerschellen, während Einsteiger fragen, wie man Missionen wiederholt und versteckte Frisuren per Waink-App freischaltet.",
   "ideen": [
     {
-      "titel": "Taucht um 2 Uhr nachts wirklich ein *UFO* auf?",
-      "warum": "Guides und Live-Ticker feiern gerade das UFO-Ereignis in Kelly County, das die Trophäe „The Truth is Out There“ freischaltet.",
-      "aufbau": "Getestet wird, ob das UFO zur angegebenen Uhrzeit am angegebenen Ort erscheint, gemessen werden Spieluhrzeit beim Auftauchen, Echtzeit bis zur Begegnung und ob die Trophäe kommt.",
+      "titel": "Kommt irgendein Fahrzeug durch den gemalten *Tunnel*?",
+      "warum": "Seit dem 23. November geht der Looney-Tunes-Fake-Tunnel im Vice Decor District viral, weil Spieler reihenweise gegen die bemalte Wand fahren.",
+      "aufbau": "Verschiedene Fahrzeuge und Tempi fahren gegen das Wandbild und gemessen wird, ob irgendetwas durchkommt und wie viel Schaden Auto und Figur bei welcher Geschwindigkeit nehmen.",
       "drehplan": [
-        "Mit freigeschaltetem Kapitel 2 nach Kelly County östlich von Port Gellhorn fahren, in die Nähe des Starlet Motels.",
-        "Bis 2:00 Uhr Spielzeit warten und die Spieluhr im Bild zeigen, Stoppuhr für die Echtzeit starten.",
-        "Nach dem Auto mit Blinklicht und offenen Türen suchen und dem Lichtstrahl folgen.",
-        "Begegnung und Trophäen-Meldung aufnehmen, Ergebnis als BESTÄTIGT oder WIDERLEGT stempeln."
-      ],
-      "kategorie": "Mythen-Labor",
-      "potenzial": "sehr hoch",
-      "quelle": {
-        "titel": "GTA 6 UFO Location: How to Unlock The Truth Is Out There Trophy",
-        "url": "https://beebom.com/gta-6-ufo-location-trophy-guide/"
-      }
-    },
-    {
-      "titel": "Gibt es in GTA 6 wirklich *Cheats*?",
-      "warum": "Cheat-Listen mit Steuerkreuz-Codes übers Handy kursieren seit dem Wochenende, angeblich nur nach dem Storyende und ohne Trophäen.",
-      "aufbau": "Geprüft wird, ob sich mit Handy plus L1 und R1 eine Cheat-Eingabe öffnet und was passiert, wenn man vor dem Storyende einen gelisteten Code eingibt.",
-      "drehplan": [
-        "Im Spiel das Handy mit Steuerkreuz oben öffnen und L1 und R1 halten, aufnehmen, ob ein Eingabefeld erscheint.",
-        "Einen gelisteten Code aus der Quelle dreimal eingeben und jede Reaktion notieren.",
-        "Kontostand, Munition oder Fahndung vorher und nachher im Bild zeigen.",
-        "Ergebnis als Mythos stempeln und fragen, wer die Story schon durch hat."
-      ],
-      "kategorie": "Mythen-Labor",
-      "potenzial": "sehr hoch",
-      "quelle": {
-        "titel": "GTA 6: All cheats for PS5 and Xbox and what you need to pay attention to",
-        "url": "https://mein-mmo.de/en/gta-6-all-cheats-for-ps5-and-xbox-and-what-you-need-to-pay-attention-to,1597086/"
-      }
-    },
-    {
-      "titel": "Wird der Zug an der *Brücke* zur Schlange?",
-      "warum": "Auf r/GTA6 geht ein Clip viral, in dem sich ein Zug an einer Eisenbahnbrücke verdreht und Fahrgäste herausschleudert, der Poster hat ihn selbst nie erlebt.",
-      "aufbau": "An einer Eisenbahnbrücke werden mehrere Zugdurchfahrten beobachtet und gezählt, wie oft der Zug sich verbiegt, schwebt oder normal durchfährt.",
-      "drehplan": [
-        "Eine Eisenbahnbrücke auf der Karte suchen und daneben eine gute Kameraposition wählen.",
-        "Fünf Zugdurchfahrten aufnehmen und jede als normal oder verbogen zählen.",
-        "Einmal selbst im Zug über die Brücke fahren und aufnehmen, was passiert.",
-        "Trefferquote einblenden und stempeln."
+        "Im Vice Decor District vom Fufu-Laden etwa 160 m Richtung Tankstelle fahren und das Tunnel-Wandbild aus Fahrersicht filmen",
+        "Mit demselben Auto dreimal anfahren: langsam, mittel, Vollgas, und nach jedem Aufprall Schaden und Lebensanzeige aufnehmen",
+        "Ein Motorrad und zu Fuß als Gegenprobe gegen die Wand testen",
+        "Zum Schluss Zeitlupen-Replay oder Rückblick des härtesten Aufpralls für den Stempel nutzen"
       ],
       "kategorie": "Physik am Limit",
-      "potenzial": "hoch",
+      "potenzial": "sehr hoch",
       "quelle": {
-        "titel": "Ein Zug in GTA 6 verwandelt sich in eine Riesenschlange und schleudert Fahrgäste umher",
-        "url": "https://de.vgtimes.com/video/175619-a-gta-6-train-turns-into-a-giant-snake-and-starts-throwing-passengers-around-players-laugh-at-hilarious-glitch.html"
+        "titel": "Where To Find The Painted Tunnel In GTA 6",
+        "url": "https://www.thegamer.com/gta-6-painted-tunnel-prank/"
       }
     },
     {
-      "titel": "Ist die erste *Registrierung* wirklich kostenlos?",
-      "warum": "Weil es keine Autohäuser gibt, fragen viele Einsteiger, wie man geklaute Autos behält, laut Live-Ticker ist die erste Registrierung gratis.",
-      "aufbau": "Zwei geklaute Autos werden nacheinander registriert, gemessen werden der angezeigte Preis für die erste und zweite Registrierung und ob das Auto später wieder verfügbar ist.",
+      "titel": "Sieht GTA 6 wirklich aus wie der *Trailer*?",
+      "warum": "Ein Spieler hat laut den Day-8-Liveupdates den Enthüllungstrailer Einstellung für Einstellung im fertigen Spiel nachgebaut, und der Clip geht herum.",
+      "aufbau": "Drei markante Einstellungen aus dem ersten Trailer werden auf der Konsole nachgestellt und für jede wird gemessen, wie lange das Nachstellen dauert und wie viele Bilddetails übereinstimmen.",
       "drehplan": [
-        "Ein geparktes Auto klauen und zu einer Pay-'n'-Spray-Werkstatt fahren.",
-        "Registrieren und den angezeigten Preis sowie den Kontostand vorher und nachher filmen.",
-        "Ein zweites Auto klauen und genauso registrieren, Preis vergleichen.",
-        "Das erste Auto abstellen, weggehen und prüfen, ob du es wiederbekommst."
+        "Drei gut wiedererkennbare Einstellungen aus dem ersten Trailer auswählen und als Vergleich bereitlegen",
+        "Die Orte auf der Karte anfahren und die Kamera möglichst genau wie im Trailer ausrichten",
+        "Pro Einstellung Zeit stoppen und Übereinstimmungen wie Licht, Gebäude und Verkehr abhaken",
+        "Beide Bilder für den Split-Screen-Vergleich nacheinander aufnehmen"
+      ],
+      "kategorie": "Härtetest",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6 Day 8 Live Updates: News, Fixes, Best Clips and Guides",
+        "url": "https://happygamer.com/gta-6-day-8-live-updates-184101/"
+      }
+    },
+    {
+      "titel": "Schaltet ein *Magazin* wirklich geheime Frisuren frei?",
+      "warum": "Spieler haben entdeckt, dass man versteckte Magazine mit der Waink-App scannt, um exklusive Frisuren für Jason und Looks für Lucia freizuschalten, eine offizielle Anleitung von Rockstar gibt es dafür nicht.",
+      "aufbau": "Ein Magazin wird mit Waink gescannt und verglichen wird die Frisurenauswahl im Salon vorher und nachher sowie die Zeit von der Suche bis zur Freischaltung.",
+      "drehplan": [
+        "Im Friseursalon die aktuelle Frisurenliste abfilmen und die Anzahl notieren",
+        "Mit einem Community-Guide den nächsten Magazin-Fundort anfahren und Zeit stoppen",
+        "Nah ans Magazin gehen, Waink-Hinweis abwarten und das Cover scannen",
+        "Zurück in den Salon und die neue Liste mit der alten vergleichen"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "GTA 6: Zocker entdecken verstecktes Feature",
+        "url": "https://www.notebookcheck.com/GTA-6-Zocker-entdecken-verstecktes-Feature.1459128.0.html"
+      }
+    },
+    {
+      "titel": "Kann man Missionen in GTA 6 *wiederholen*?",
+      "warum": "Viele fragen gerade nach einem Missions-Wiederholen-Menü, das es laut aktuellen Guides nicht gibt, sodass nur Neustart, Checkpoint und manuelle Speicherstände bleiben.",
+      "aufbau": "Getestet wird, welche Wege es gibt, eine Mission erneut zu spielen, und gemessen werden die Zeit pro Methode und die Zahl der verfügbaren Speicherplätze.",
+      "drehplan": [
+        "Im Pausenmenü und auf der Karte nach einer Wiederholen-Option suchen und das Ergebnis filmen",
+        "In einer laufenden Mission einmal Checkpoint erneut versuchen und einmal Mission neu starten, jeweils Zeit stoppen",
+        "Die Speicherplätze im manuellen Speichermenü durchzählen",
+        "Vor einer Mission manuell speichern, Mission spielen und den Stand neu laden"
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {
+        "titel": "Can You Replay Missions in GTA 6? How to Go Back to a Mission",
+        "url": "https://happygamer.com/can-you-replay-missions-gta-6-184124"
+      }
+    },
+    {
+      "titel": "Wie lange wartest du auf den viralen *Radio-Hit*?",
+      "warum": "Carly Rae Jepsens Run Away With Me ist im GTA-6-Soundtrack und geht dadurch laut Bericht vom 25. November wieder viral.",
+      "aufbau": "Die Radiosender werden der Reihe nach durchgeschaltet und gemessen wird, auf welchem Sender und nach wie vielen Minuten der Song zum ersten Mal läuft.",
+      "drehplan": [
+        "Stoppuhr starten und mit einem Auto losfahren",
+        "Alle Radiosender der Reihe nach durchschalten und je Sender kurz den laufenden Titel festhalten",
+        "Auf dem Sender mit dem Song bleiben bzw. weiterschalten, bis er läuft, und die Zeit notieren",
+        "Den Moment, in dem der Song startet, mit Fahrt durch Vice City aufnehmen"
       ],
       "kategorie": "Systeme erklärt",
-      "potenzial": "hoch",
-      "quelle": {
-        "titel": "GTA 6 Day 6 Live Updates: News, Fixes, Best Clips and Guides",
-        "url": "https://happygamer.com/gta-6-day-6-live-updates-180833/"
-      }
-    },
-    {
-      "titel": "Kam heute wirklich ein *Leistungs-Patch* für GTA 6?",
-      "warum": "Ein viraler Post kündigt für den 25. November einen großen Leistungs-Patch an, eine Bestätigung von Rockstar wurde bisher nicht gefunden.",
-      "aufbau": "Geprüft werden Versionsnummer und Update-Verlauf der Konsole, gemessen wird die Ladezeit vom Startbildschirm bis ins Spiel vor und nach einem eventuellen Update.",
-      "drehplan": [
-        "In den Spieloptionen der Konsole die installierte Version ablesen und filmen (zuletzt 01.002.002).",
-        "Nach Updates suchen und die Größe eines neuen Updates notieren, falls eins kommt.",
-        "Die Ladezeit vom Startbildschirm bis ins Spiel mit der Handy-Stoppuhr messen.",
-        "Ergebnis stempeln und fragen, was der nächste Patch reparieren soll."
-      ],
-      "kategorie": "Mythen-Labor",
       "potenzial": "mittel",
       "quelle": {
-        "titel": "GTA 6 Day 7 Live Updates: News, Fixes, Best Clips and Guides",
-        "url": "https://happygamer.com/gta-6-day-7-live-updates-182434/"
+        "titel": "This decade-old Carly Rae Jepsen song is going viral thanks to GTA 6",
+        "url": "https://www.queerty.com/this-decade-old-carly-rae-jepsen-song-is-going-viral-thanks-to-gta-6-but-lets-not-forget-who-loved-it-first-%F0%9F%98%8F-20261125/"
       }
     }
   ],
