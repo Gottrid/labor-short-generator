@@ -1,0 +1,77 @@
+{
+  "datum": "2026-11-27",
+  "trend": "Acht Tage nach dem Launch jagen alle Film-Easter-Eggs wie einen Horror-Clown im Aufzug, testen Reddit-Tipps gegen die Polizei und reparieren das hängende Wetter per Cache-Löschen selbst, weil der erste Patch es nicht überall behoben hat.",
+  "ideen": [
+    {
+      "titel": "Wartet im Aufzug wirklich ein *Clown*?",
+      "warum": "Spieler berichten von einem Horror-Clown im Aufzug des Haymarket Building in West Ocean Beach, der nur zwischen 22 und 2 Uhr Spielzeit erscheinen soll.",
+      "aufbau": "Getestet wird, ob der Clown zu der genannten Zeit im Aufzug auftaucht und ob er auch außerhalb des Zeitfensters kommt, gemessen werden Spieluhrzeit, Zahl der Aufzugfahrten bis zur Sichtung und Dauer der Begegnung.",
+      "drehplan": [
+        "Zum Haymarket Building in West Ocean Beach fahren und die Uhrzeit auf dem Handy einblenden.",
+        "Vor 22 Uhr Spielzeit dreimal Aufzug fahren und jede Fahrt filmen.",
+        "Zwischen 22 und 2 Uhr bis zu zehnmal Aufzug fahren und jede Fahrt mitzählen.",
+        "Ergebnis mit Uhrzeit groß einblenden und BESTÄTIGT oder WIDERLEGT stempeln."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "Spieler haben in GTA 6 auf PS5 Easter Eggs aus den Filmen Jaws, It und Saw entdeckt", "url": "https://de.gamegpu.com/news/igry/igroki-obnaruzhili-v-gta-6-na-ps5-paskhalki-k-filmam-chelyusti-ono-i-pila"}
+    },
+    {
+      "titel": "Verlierst du die Polizei mit neuem *Outfit*?",
+      "warum": "Auf Reddit kursiert der unbestätigte Tipp, dass ein Kleidungswechsel nach einem Überfall die Polizei abschüttelt.",
+      "aufbau": "Nach demselben kleinen Überfall wird einmal mit und einmal ohne Kleidungswechsel geflohen, gemessen wird die Zeit, bis die Fahndung erlischt.",
+      "drehplan": [
+        "Einen kleinen Laden ausrauben und den Fahndungsbeginn mit Stoppuhr markieren.",
+        "Durchgang 1: ohne Umziehen fliehen und die Zeit bis zum Ende der Fahndung stoppen.",
+        "Durchgang 2: denselben Laden ausrauben, sofort umziehen und erneut stoppen.",
+        "Beide Zeiten nebeneinander einblenden und stempeln."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "Reddit tip: change your outfit after a robbery to lose police (GTA 6 Community Wiki)", "url": "https://gta6communitywiki.com/latest/reddit-tip-change-your-outfit-after-robbery-lose-1y6f32m"}
+    },
+    {
+      "titel": "Rutschst du beim Polizei-Tackle durch die *Wand*?",
+      "warum": "Ein viraler Clip zeigt Jason und einen Polizisten, die beim Tackle in Innenräumen durch Wände und Theken gleiten, und unklar ist, ob Patch 01.002.002 das behoben hat.",
+      "aufbau": "In einem Innenraum lässt man sich zehnmal von der Polizei an Wand, Theke und Sofa tackeln und zählt, wie oft beide durch die Geometrie rutschen und wie viele Sekunden es dauert.",
+      "drehplan": [
+        "Mit einer Stufe Fahndung in einen Laden mit Theke gehen und vor der Theke warten.",
+        "Zehn Tackles an Wand, Theke und Sofa aufnehmen und jeden Clip-Fall mitzählen.",
+        "Die längste Rutschpartie in Zeitlupe zeigen und die Sekunden einblenden.",
+        "Trefferquote einblenden und fragen, ob es bei den Zuschauern auch passiert."
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "hoch",
+      "quelle": {"titel": "GTA 6 police tackle glitch: Jason and a cop clip through walls", "url": "https://gta6bugs.com/bugs/gta-6-police-tackle-clipping-through-walls"}
+    },
+    {
+      "titel": "Bringt der Cache-Trick wirklich das *Wetter* zurück?",
+      "warum": "Laut GamesRadar soll das Löschen des Systemcaches im abgesicherten Modus der PS5 das festhängende Wetter reparieren, das der erste Patch nicht überall behoben hat.",
+      "aufbau": "Vor und nach dem Cache-Löschen wird am selben Ort 10 Minuten Echtzeit gewartet und jeder Wetterwechsel gezählt.",
+      "drehplan": [
+        "An einem festen Ort 10 Minuten Echtzeit warten und jeden Wetterwechsel notieren.",
+        "PS5 ausschalten, Power-Taste halten, bis sie piept, und im abgesicherten Modus Option 6 Cache löschen wählen.",
+        "Spiel neu laden, am selben Ort wieder 10 Minuten warten und Wetterwechsel zählen.",
+        "Beide Zählungen einblenden und stempeln."
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "hoch",
+      "quelle": {"titel": "GTA 6 players fix the weather system themselves after Rockstar's latest patch left them hanging", "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-players-fix-the-weather-system-themselves-after-rockstars-latest-patch-left-them-hanging-its-super-easy-and-takes-like-two-minutes/"}
+    },
+    {
+      "titel": "Kann man Boote in GTA 6 überhaupt *tanken*?",
+      "warum": "Auf Reddit melden Spieler, dass die Tankstellen für Boote nicht funktionieren, bestätigt ist das noch nicht.",
+      "aufbau": "An drei verschiedenen Boot-Tankstellen wird versucht zu tanken, gemessen werden Tankanzeige vorher und nachher, Preis und ob eine Tank-Option erscheint.",
+      "drehplan": [
+        "Mit einem Boot herumfahren, bis die Tankanzeige sichtbar gesunken ist, und den Stand einblenden.",
+        "Die erste Boot-Tankstelle anfahren und zeigen, ob eine Tank-Option erscheint.",
+        "Dasselbe an zwei weiteren Boot-Tankstellen wiederholen.",
+        "Ergebnis pro Tankstelle mit Häkchen oder Kreuz einblenden und stempeln."
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "mittel",
+      "quelle": {"titel": "Players report boat refuel stations do not work (GTA 6 Community Wiki)", "url": "https://gta6communitywiki.com/latest/players-report-boat-refuel-stations-do-not-work-1y68hy5"}
+    }
+  ],
+  "sonntag": [0, 1]
+}
