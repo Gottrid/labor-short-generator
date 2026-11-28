@@ -1,0 +1,77 @@
+{
+  "datum": "2026-11-28",
+  "trend": "Neun Tage nach dem Launch klagen PS5-Spieler über schlechtere Grafik seit Patch 01.002.002, ein Softlock bei Raul's Plan blockiert die Story, und Einsteiger teilen Listen mit versteckten Tipps zu Fahndungssternen und Fahrzeugsteuerung.",
+  "ideen": [
+    {
+      "titel": "Sieht GTA 6 nach dem Patch *schlechter* aus?",
+      "warum": "Seit heute berichtet Notebookcheck, dass PS5- und PS5-Pro-Spieler seit Update 01.002.002 schlechteres Licht, pixelige Wolken und unschärfere Haare und Fernsicht sehen.",
+      "aufbau": "Drei Szenen aus einer eigenen Aufnahme von vor dem 23. November werden am selben Ort nachgestellt und gezählt, in wie vielen Punkten (Wolken, Haare, Fernsicht, Wasserspiegelung) das neue Bild sichtbar schlechter aussieht.",
+      "drehplan": [
+        "Aus dem eigenen Archiv drei Clips von vor dem 23.11. heraussuchen, z. B. Sonnenuntergang, Nahaufnahme von Jason oder Lucia und Blick in die Ferne.",
+        "Mit der aktuellen Version an dieselben Orte fahren und bei ähnlicher Uhrzeit mit gleicher Kameraposition aufnehmen.",
+        "Wenn es regnet, zusätzlich eine Pfütze oder nasse Straße für die Wasserspiegelung filmen.",
+        "Im Schnitt alt und neu im Split-Screen zeigen und pro Szene die Unterschiede abhaken."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Update: PS5 und PS5 Pro Zocker beschweren sich über schlechtere Grafik", "url": "https://www.notebookcheck.com/GTA-6-Update-PS5-und-PS5-Pro-Zocker-beschweren-sich-ueber-schlechtere-Grafik.1461937.0.html"}
+    },
+    {
+      "titel": "Schleudert dich die *Schaukel* wieder in den Himmel?",
+      "warum": "In der Glitch-Liste des GTA-6-Community-Wikis tauchen Clips wie \"Swingset of Death: VI Edition\" auf, die den Schaukel-Klassiker aus früheren Teilen zurückbringen sollen.",
+      "aufbau": "An einem Spielplatz wird in zehn Anläufen zu Fuß und mit langsamem Fahrzeug gegen die Schaukel getestet und gezählt, wie oft die Figur oder das Fahrzeug weggeschleudert wird und wie weit.",
+      "drehplan": [
+        "Einen Spielplatz mit Schaukel auf der Karte suchen und das Gerüst von der Seite ins Bild nehmen.",
+        "Fünfmal zu Fuß gegen die Schaukel laufen oder springen und jeden Anlauf filmen.",
+        "Fünfmal mit Fahrrad oder Auto in Schrittgeschwindigkeit dagegenrollen.",
+        "Weite des Wegfliegens an Bäumen oder Häusern abschätzen und Treffer pro Anlauf mitzählen."
+      ],
+      "kategorie": "Physik am Limit",
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Glitches List: Funny Bugs and Glitch Clips", "url": "https://gta6communitywiki.com/glitches/glitches-list"}
+    },
+    {
+      "titel": "Was bedeuten die *Farben* deiner Fahndungssterne?",
+      "warum": "Eine gestern erschienene Tippliste erklärt fünf Sternzustände von weiß umrandet bis rot, die viele Einsteiger noch nie bewusst gesehen haben.",
+      "aufbau": "Nach einem kleinen Vergehen wird jeder Sternzustand im HUD festgehalten und gestoppt, wie viele Sekunden er dauert, bis die Fahndung erlischt.",
+      "drehplan": [
+        "Ein geparktes Auto in Sichtweite der Polizei klauen und die Sterne im HUD nah aufnehmen.",
+        "Wegfahren und jeden Farbwechsel der Sterne mit Stoppuhr festhalten.",
+        "Einmal das Outfit nicht wechseln und mit der Beschreibung vergleichen, ob rot umrandete Sterne auftauchen.",
+        "Am Ende die Zustände mit Dauer als Tafel im Schnitt einblenden."
+      ],
+      "kategorie": "Systeme erklärt",
+      "potenzial": "hoch",
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
+    },
+    {
+      "titel": "Lässt dich der Gegenverkehr wirklich per *Blinker* vorbei?",
+      "warum": "Laut einer neuen Tippliste blinkt man mit links oder rechts auf dem Steuerkreuz und der Gegenverkehr lässt einen dann abbiegen.",
+      "aufbau": "An derselben Kreuzung wird zehnmal mit und zehnmal ohne Blinker links abgebogen und gezählt, wie oft der Gegenverkehr anhält und wie lange man warten muss.",
+      "drehplan": [
+        "Eine belebte Kreuzung mit Gegenverkehr suchen und die Kamera hinter das Auto setzen.",
+        "Zehnmal ohne Blinker links abbiegen und Wartezeit sowie Stopps des Gegenverkehrs notieren.",
+        "Zehnmal mit Steuerkreuz links blinken und genauso messen.",
+        "Ergebnis als Strichliste einblenden: Stopps und Wartezeit mit gegen ohne Blinker."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "hoch",
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
+    },
+    {
+      "titel": "Kannst du dein überschlagenes Auto wirklich *zurückschieben*?",
+      "warum": "Die gestern erschienene Tippliste verrät, dass man ein umgekipptes Auto aussteigend zurückschieben kann und mit gehaltenem Viereck bzw. X mehr Kraft hat.",
+      "aufbau": "Drei unterschiedlich große Autos werden auf das Dach gelegt und gestoppt, wie viele Sekunden das Zurückschieben mit und ohne gehaltene Kraft-Taste dauert.",
+      "drehplan": [
+        "Ein kleines, ein mittleres und ein großes Auto nacheinander an einem Hang oder einer Kante überschlagen.",
+        "Aussteigen und ohne gehaltene Taste schieben, Zeit bis das Auto wieder auf den Rädern steht stoppen.",
+        "Dasselbe mit gehaltenem Viereck bzw. X wiederholen.",
+        "Testen, ob es bei einem Auto gar nicht klappt, und die Zeiten als Tabelle einblenden."
+      ],
+      "kategorie": "Spieler-Hilfe",
+      "potenzial": "mittel",
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
+    }
+  ],
+  "sonntag": [0, 1]
+}

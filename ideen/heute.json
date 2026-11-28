@@ -1,76 +1,76 @@
 {
-  "datum": "2026-11-27",
-  "trend": "Acht Tage nach dem Launch jagen alle Film-Easter-Eggs wie einen Horror-Clown im Aufzug, testen Reddit-Tipps gegen die Polizei und reparieren das hängende Wetter per Cache-Löschen selbst, weil der erste Patch es nicht überall behoben hat.",
+  "datum": "2026-11-28",
+  "trend": "Neun Tage nach dem Launch klagen PS5-Spieler über schlechtere Grafik seit Patch 01.002.002, ein Softlock bei Raul's Plan blockiert die Story, und Einsteiger teilen Listen mit versteckten Tipps zu Fahndungssternen und Fahrzeugsteuerung.",
   "ideen": [
     {
-      "titel": "Wartet im Aufzug wirklich ein *Clown*?",
-      "warum": "Spieler berichten von einem Horror-Clown im Aufzug des Haymarket Building in West Ocean Beach, der nur zwischen 22 und 2 Uhr Spielzeit erscheinen soll.",
-      "aufbau": "Getestet wird, ob der Clown zu der genannten Zeit im Aufzug auftaucht und ob er auch außerhalb des Zeitfensters kommt, gemessen werden Spieluhrzeit, Zahl der Aufzugfahrten bis zur Sichtung und Dauer der Begegnung.",
+      "titel": "Sieht GTA 6 nach dem Patch *schlechter* aus?",
+      "warum": "Seit heute berichtet Notebookcheck, dass PS5- und PS5-Pro-Spieler seit Update 01.002.002 schlechteres Licht, pixelige Wolken und unschärfere Haare und Fernsicht sehen.",
+      "aufbau": "Drei Szenen aus einer eigenen Aufnahme von vor dem 23. November werden am selben Ort nachgestellt und gezählt, in wie vielen Punkten (Wolken, Haare, Fernsicht, Wasserspiegelung) das neue Bild sichtbar schlechter aussieht.",
       "drehplan": [
-        "Zum Haymarket Building in West Ocean Beach fahren und die Uhrzeit auf dem Handy einblenden.",
-        "Vor 22 Uhr Spielzeit dreimal Aufzug fahren und jede Fahrt filmen.",
-        "Zwischen 22 und 2 Uhr bis zu zehnmal Aufzug fahren und jede Fahrt mitzählen.",
-        "Ergebnis mit Uhrzeit groß einblenden und BESTÄTIGT oder WIDERLEGT stempeln."
+        "Aus dem eigenen Archiv drei Clips von vor dem 23.11. heraussuchen, z. B. Sonnenuntergang, Nahaufnahme von Jason oder Lucia und Blick in die Ferne.",
+        "Mit der aktuellen Version an dieselben Orte fahren und bei ähnlicher Uhrzeit mit gleicher Kameraposition aufnehmen.",
+        "Wenn es regnet, zusätzlich eine Pfütze oder nasse Straße für die Wasserspiegelung filmen.",
+        "Im Schnitt alt und neu im Split-Screen zeigen und pro Szene die Unterschiede abhaken."
       ],
       "kategorie": "Mythen-Labor",
       "potenzial": "sehr hoch",
-      "quelle": {"titel": "Spieler haben in GTA 6 auf PS5 Easter Eggs aus den Filmen Jaws, It und Saw entdeckt", "url": "https://de.gamegpu.com/news/igry/igroki-obnaruzhili-v-gta-6-na-ps5-paskhalki-k-filmam-chelyusti-ono-i-pila"}
+      "quelle": {"titel": "GTA 6 Update: PS5 und PS5 Pro Zocker beschweren sich über schlechtere Grafik", "url": "https://www.notebookcheck.com/GTA-6-Update-PS5-und-PS5-Pro-Zocker-beschweren-sich-ueber-schlechtere-Grafik.1461937.0.html"}
     },
     {
-      "titel": "Verlierst du die Polizei mit neuem *Outfit*?",
-      "warum": "Auf Reddit kursiert der unbestätigte Tipp, dass ein Kleidungswechsel nach einem Überfall die Polizei abschüttelt.",
-      "aufbau": "Nach demselben kleinen Überfall wird einmal mit und einmal ohne Kleidungswechsel geflohen, gemessen wird die Zeit, bis die Fahndung erlischt.",
+      "titel": "Schleudert dich die *Schaukel* wieder in den Himmel?",
+      "warum": "In der Glitch-Liste des GTA-6-Community-Wikis tauchen Clips wie \"Swingset of Death: VI Edition\" auf, die den Schaukel-Klassiker aus früheren Teilen zurückbringen sollen.",
+      "aufbau": "An einem Spielplatz wird in zehn Anläufen zu Fuß und mit langsamem Fahrzeug gegen die Schaukel getestet und gezählt, wie oft die Figur oder das Fahrzeug weggeschleudert wird und wie weit.",
       "drehplan": [
-        "Einen kleinen Laden ausrauben und den Fahndungsbeginn mit Stoppuhr markieren.",
-        "Durchgang 1: ohne Umziehen fliehen und die Zeit bis zum Ende der Fahndung stoppen.",
-        "Durchgang 2: denselben Laden ausrauben, sofort umziehen und erneut stoppen.",
-        "Beide Zeiten nebeneinander einblenden und stempeln."
-      ],
-      "kategorie": "Mythen-Labor",
-      "potenzial": "sehr hoch",
-      "quelle": {"titel": "Reddit tip: change your outfit after a robbery to lose police (GTA 6 Community Wiki)", "url": "https://gta6communitywiki.com/latest/reddit-tip-change-your-outfit-after-robbery-lose-1y6f32m"}
-    },
-    {
-      "titel": "Rutschst du beim Polizei-Tackle durch die *Wand*?",
-      "warum": "Ein viraler Clip zeigt Jason und einen Polizisten, die beim Tackle in Innenräumen durch Wände und Theken gleiten, und unklar ist, ob Patch 01.002.002 das behoben hat.",
-      "aufbau": "In einem Innenraum lässt man sich zehnmal von der Polizei an Wand, Theke und Sofa tackeln und zählt, wie oft beide durch die Geometrie rutschen und wie viele Sekunden es dauert.",
-      "drehplan": [
-        "Mit einer Stufe Fahndung in einen Laden mit Theke gehen und vor der Theke warten.",
-        "Zehn Tackles an Wand, Theke und Sofa aufnehmen und jeden Clip-Fall mitzählen.",
-        "Die längste Rutschpartie in Zeitlupe zeigen und die Sekunden einblenden.",
-        "Trefferquote einblenden und fragen, ob es bei den Zuschauern auch passiert."
+        "Einen Spielplatz mit Schaukel auf der Karte suchen und das Gerüst von der Seite ins Bild nehmen.",
+        "Fünfmal zu Fuß gegen die Schaukel laufen oder springen und jeden Anlauf filmen.",
+        "Fünfmal mit Fahrrad oder Auto in Schrittgeschwindigkeit dagegenrollen.",
+        "Weite des Wegfliegens an Bäumen oder Häusern abschätzen und Treffer pro Anlauf mitzählen."
       ],
       "kategorie": "Physik am Limit",
-      "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 police tackle glitch: Jason and a cop clip through walls", "url": "https://gta6bugs.com/bugs/gta-6-police-tackle-clipping-through-walls"}
+      "potenzial": "sehr hoch",
+      "quelle": {"titel": "GTA 6 Glitches List: Funny Bugs and Glitch Clips", "url": "https://gta6communitywiki.com/glitches/glitches-list"}
     },
     {
-      "titel": "Bringt der Cache-Trick wirklich das *Wetter* zurück?",
-      "warum": "Laut GamesRadar soll das Löschen des Systemcaches im abgesicherten Modus der PS5 das festhängende Wetter reparieren, das der erste Patch nicht überall behoben hat.",
-      "aufbau": "Vor und nach dem Cache-Löschen wird am selben Ort 10 Minuten Echtzeit gewartet und jeder Wetterwechsel gezählt.",
+      "titel": "Was bedeuten die *Farben* deiner Fahndungssterne?",
+      "warum": "Eine gestern erschienene Tippliste erklärt fünf Sternzustände von weiß umrandet bis rot, die viele Einsteiger noch nie bewusst gesehen haben.",
+      "aufbau": "Nach einem kleinen Vergehen wird jeder Sternzustand im HUD festgehalten und gestoppt, wie viele Sekunden er dauert, bis die Fahndung erlischt.",
       "drehplan": [
-        "An einem festen Ort 10 Minuten Echtzeit warten und jeden Wetterwechsel notieren.",
-        "PS5 ausschalten, Power-Taste halten, bis sie piept, und im abgesicherten Modus Option 6 Cache löschen wählen.",
-        "Spiel neu laden, am selben Ort wieder 10 Minuten warten und Wetterwechsel zählen.",
-        "Beide Zählungen einblenden und stempeln."
+        "Ein geparktes Auto in Sichtweite der Polizei klauen und die Sterne im HUD nah aufnehmen.",
+        "Wegfahren und jeden Farbwechsel der Sterne mit Stoppuhr festhalten.",
+        "Einmal das Outfit nicht wechseln und mit der Beschreibung vergleichen, ob rot umrandete Sterne auftauchen.",
+        "Am Ende die Zustände mit Dauer als Tafel im Schnitt einblenden."
       ],
-      "kategorie": "Spieler-Hilfe",
+      "kategorie": "Systeme erklärt",
       "potenzial": "hoch",
-      "quelle": {"titel": "GTA 6 players fix the weather system themselves after Rockstar's latest patch left them hanging", "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-players-fix-the-weather-system-themselves-after-rockstars-latest-patch-left-them-hanging-its-super-easy-and-takes-like-two-minutes/"}
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
     },
     {
-      "titel": "Kann man Boote in GTA 6 überhaupt *tanken*?",
-      "warum": "Auf Reddit melden Spieler, dass die Tankstellen für Boote nicht funktionieren, bestätigt ist das noch nicht.",
-      "aufbau": "An drei verschiedenen Boot-Tankstellen wird versucht zu tanken, gemessen werden Tankanzeige vorher und nachher, Preis und ob eine Tank-Option erscheint.",
+      "titel": "Lässt dich der Gegenverkehr wirklich per *Blinker* vorbei?",
+      "warum": "Laut einer neuen Tippliste blinkt man mit links oder rechts auf dem Steuerkreuz und der Gegenverkehr lässt einen dann abbiegen.",
+      "aufbau": "An derselben Kreuzung wird zehnmal mit und zehnmal ohne Blinker links abgebogen und gezählt, wie oft der Gegenverkehr anhält und wie lange man warten muss.",
       "drehplan": [
-        "Mit einem Boot herumfahren, bis die Tankanzeige sichtbar gesunken ist, und den Stand einblenden.",
-        "Die erste Boot-Tankstelle anfahren und zeigen, ob eine Tank-Option erscheint.",
-        "Dasselbe an zwei weiteren Boot-Tankstellen wiederholen.",
-        "Ergebnis pro Tankstelle mit Häkchen oder Kreuz einblenden und stempeln."
+        "Eine belebte Kreuzung mit Gegenverkehr suchen und die Kamera hinter das Auto setzen.",
+        "Zehnmal ohne Blinker links abbiegen und Wartezeit sowie Stopps des Gegenverkehrs notieren.",
+        "Zehnmal mit Steuerkreuz links blinken und genauso messen.",
+        "Ergebnis als Strichliste einblenden: Stopps und Wartezeit mit gegen ohne Blinker."
+      ],
+      "kategorie": "Mythen-Labor",
+      "potenzial": "hoch",
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
+    },
+    {
+      "titel": "Kannst du dein überschlagenes Auto wirklich *zurückschieben*?",
+      "warum": "Die gestern erschienene Tippliste verrät, dass man ein umgekipptes Auto aussteigend zurückschieben kann und mit gehaltenem Viereck bzw. X mehr Kraft hat.",
+      "aufbau": "Drei unterschiedlich große Autos werden auf das Dach gelegt und gestoppt, wie viele Sekunden das Zurückschieben mit und ohne gehaltene Kraft-Taste dauert.",
+      "drehplan": [
+        "Ein kleines, ein mittleres und ein großes Auto nacheinander an einem Hang oder einer Kante überschlagen.",
+        "Aussteigen und ohne gehaltene Taste schieben, Zeit bis das Auto wieder auf den Rädern steht stoppen.",
+        "Dasselbe mit gehaltenem Viereck bzw. X wiederholen.",
+        "Testen, ob es bei einem Auto gar nicht klappt, und die Zeiten als Tabelle einblenden."
       ],
       "kategorie": "Spieler-Hilfe",
       "potenzial": "mittel",
-      "quelle": {"titel": "Players report boat refuel stations do not work (GTA 6 Community Wiki)", "url": "https://gta6communitywiki.com/latest/players-report-boat-refuel-stations-do-not-work-1y68hy5"}
+      "quelle": {"titel": "37 helpful GTA 6 tips I wish I knew from the start", "url": "https://thetab.com/2026/11/27/37-helpful-gta-6-tips-i-wish-i-knew-from-the-start-and-you-will-too"}
     }
   ],
   "sonntag": [0, 1]
